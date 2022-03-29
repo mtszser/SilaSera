@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item android:id="@+id/myDiet"
+        android:title="My Diet"
+        app:showAsAction="never">
+        <menu>
+            <item android:id="@+id/premiumOnly"
+                android:title="@string/sign_in"/>
+        </menu>
+    </item>
+
+    <item android:id="@+id/myWorkout"
+        android:title="My Workout"
+        app:showAsAction="never">
+        <menu>
+            <item android:id="@+id/beginnerW"
+
+                android:title="Beginner Workout"
+                android:icon="@drawable/ic_icon_ball"
+                />
+
+            <item android:id="@+id/intermediateW"
+                android:title="Intermediate Workout"
+                android:icon="@drawable/ic_icon_db"/>
+
+            <item android:id="@+id/advancedW"
+                android:title="Advanced Workout"
+                android:icon="@drawable/ic_icon_pullups"/>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/myReport"
+        android:title="Send Report"
+        app:showAsAction="never">
+        <menu>
+            <item android:id="@+id/guest_report"
+                android:title="@string/sign_in"/>
+
+
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/myLogout"
+        android:title="Logout"
+        app:showAsAction="never"/>
+
+
+    <item android:id="@+id/menu_search"
+        android:icon="@drawable/ic_baseline_login"
+        android:title="Search Menu"
+        app:showAsAction="ifRoom">
+    </item>
+
+
+</menu>
