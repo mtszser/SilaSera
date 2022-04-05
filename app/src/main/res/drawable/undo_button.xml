@@ -3,7 +3,7 @@
 
     <item android:state_focused="true" android:drawable="@drawable/undobuton2" />
     <item android:state_pressed="true" android:drawable="@drawable/undobuton2" />
-    <item android:state_focused="false" android:drawable="@color/cheeseYellow" />
-    <item android:state_pressed="false" android:drawable="@color/cheeseYellow" />
+    <item android:state_focused="false" android:drawable="@color/invisible"/>
+    <item android:state_pressed="false" android:drawable="@color/invisible"/>
 
 </selector>

@@ -4,7 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GuestWomanWorkout">
+    tools:context=".GuestWomanWorkout"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/guest_top_corner_radius"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Let's start with a Workout Plan"
+                    android:textColor="@color/black"
+                    android:textSize="25sp">
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Choose one of my programs based on your daily activities. "
+                    android:textColor="@color/black"
+                    android:textSize="15sp">
+                </TextView>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/woman_RV"
@@ -13,4 +54,7 @@
         tools:listitem="@layout/guest_woman_user">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+
+
 </LinearLayout>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".SignUp"
-    android:background="@color/mainThemeColor">
+    android:background="@color/lessCheeseYellow">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,57 +17,53 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="60dp"
             android:padding="10dp"
-            android:background="@drawable/upper_bar"
-            android:orientation="vertical">
+            android:background="@drawable/guest_top_corner_radius"
+            android:orientation="vertical"
+            android:gravity="center">
 
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/undoBtn"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="@drawable/undo_button"
-                    android:src="@drawable/left_arrow_24"
-                    tools:ignore="SpeakableTextPresentCheck" />
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="start|center">
 
-                <EditText
-                    android:id="@+id/regText"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:id="@+id/undoBtn"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_gravity="center"
+                        android:background="@drawable/undo_button"
+                        android:src="@drawable/left_arrow_24"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:focusable="false"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/black"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Let's get started!"
-                    android:textSize="30sp" />
+                    android:orientation="vertical"
+                    android:gravity="center">
 
-                <EditText
-                    android:id="@+id/regText2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:focusable="false"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/black"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Create an account to get all features."
-                    android:textSize="15sp" />
+                    <EditText
+                        android:id="@+id/regText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:focusable="false"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/black"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Sign Up"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>
@@ -75,7 +71,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/yellowLoginLight"
+            android:background="@color/lessCheeseYellow"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="5dp">
@@ -182,7 +178,7 @@
 
             <Button
                 android:id="@+id/regButton"
-                android:layout_width="150dp"
+                android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/sign_button_1"

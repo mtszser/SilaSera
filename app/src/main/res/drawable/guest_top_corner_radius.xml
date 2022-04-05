@@ -12,9 +12,6 @@
             android:endColor="#F1B51B"
             android:angle="90">
         </gradient>
-        <stroke
-            android:width="2dp"
-            android:color="#66F1B51B"/>
     </shape>
 </item>
 </layer-list>

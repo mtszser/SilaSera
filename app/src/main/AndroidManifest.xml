@@ -10,7 +10,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SilaSera">
+        android:theme="@style/Theme.SeraSila">
+        <activity
+            android:name=".GuestWeightPlanner"
+            android:exported="false" />
+        <activity
+            android:name=".GuestWomanWorkoutUpper"
+            android:exported="false" />
         <activity
             android:name=".GuestWomanWorkout"
             android:exported="false" />
@@ -30,7 +36,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SilaSera">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
