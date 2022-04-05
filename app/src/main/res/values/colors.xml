@@ -14,12 +14,12 @@
     <color name="mainThemeColor">#1b1b1b</color>
     <color name="secondThemeColor">#3e3e3e</color>
     <color name="cheeseYellow">#ffd15c</color>
-    <color name="lessCheeseYellow">#99FFFFFF</color>
+    <color name="lessCheeseYellow">#EFEEEE</color>
     <color name="darkerCheeseYellow">#FFC227</color>
     <color name="cardViewWoman">#CCFB83F9</color>
     <color name="cardViewMan">#CC0195ED</color>
     <color name="guestBorderColor">#CC1B1A1A</color>
-    <color name="onClickBodyWeight">#CCFDD440</color>
+    <color name="onClickBodyWeight">#BCBCBC</color>
     <color name="onClickSignIn">#CC07C107</color>
-    <color name="normalStateColor">#474545</color>
+    <color name="normalStateColor">#201F1F</color>
 </resources>

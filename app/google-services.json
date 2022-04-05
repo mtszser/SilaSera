@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "341430129492",
+    "project_id": "silasera-d8cce",
+    "storage_bucket": "silasera-d8cce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341430129492:android:401585303c989462ddeec1",
+        "android_client_info": {
+          "package_name": "com.example.silasera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341430129492-lv1f37nt9s70jgfttmsove6drgqkjjir.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmjkK_Xc77qp0f2nv6rrwK8uN9Eszdvxk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341430129492-lv1f37nt9s70jgfttmsove6drgqkjjir.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
