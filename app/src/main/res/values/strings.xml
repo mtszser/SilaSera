@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SiłaSera</string>
     <string name="sign_in">*Sign in*</string>
+    <string name="api_key_">AIzaSyA3o2rylNcpODFJLA5TBBoHOnLuV9q1XIQ</string>
 </resources>
