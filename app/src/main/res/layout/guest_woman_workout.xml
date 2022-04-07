@@ -47,13 +47,27 @@
         </LinearLayout>
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/woman_RV"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/guest_woman_user">
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/woman_RV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/guest_woman_user">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/yt_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </com.google.android.youtube.player.YouTubePlayerView>
+
+
+    </LinearLayout>
 
 
 
