@@ -1,10 +1,12 @@
-package com.example.silasera
+package com.example.silasera.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.silasera.R
+import com.example.silasera.adapters.UserAdapter
+import com.example.silasera.dataclass.User
 import com.google.android.youtube.player.*
 import com.google.firebase.database.*
 
@@ -25,7 +27,7 @@ class GuestWomanWorkout : YouTubeBaseActivity() {
         userRecyclerView.layoutManager = LinearLayoutManager(this)
         userRecyclerView.setHasFixedSize(true)
 
-        userList = arrayListOf<User>()
+        userList = arrayListOf()
         getUserData()
         getYouTubeData()
 
@@ -39,9 +41,11 @@ class GuestWomanWorkout : YouTubeBaseActivity() {
                 player: YouTubePlayer?,
                 wasRestored: Boolean
             ) {
-                if(player == null) return
+                if(player == null) {
+                    return
+                }
                 if(!wasRestored){
-                    player?.cueVideo("dQw4w9WgXcQ")
+                    player.cueVideo("dQw4w9WgXcQ")
                     player.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT)
                 }
 

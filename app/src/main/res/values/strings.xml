@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">SiłaSera</string>
     <string name="sign_in">*Sign in*</string>
-    <string name="api_key_">AIzaSyA3o2rylNcpODFJLA5TBBoHOnLuV9q1XIQ</string>
+    <string name="api_key_">AIzaSyBmJ7KbbpEu8OVGmgdPaZFJDwDpDVE1CZQ</string>
+    <string name="web_client_id">341430129492-ofpk3db5qf5ebnfsah35oq6mvqq3jkb8.apps.googleusercontent.com</string>
 </resources>

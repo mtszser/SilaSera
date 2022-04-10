@@ -1,14 +1,13 @@
-package com.example.silasera
+package com.example.silasera.adapters
 
-import android.media.Image
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
+import com.example.silasera.R
+import com.example.silasera.dataclass.GuestCard
 
 class CardDatasAdapter(
 

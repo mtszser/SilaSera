@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <queries>
         <intent>
-            <action android:name="com.google.android.youtube.api.service.START"></action>
+            <action android:name="com.google.android.youtube.api.service.START" />
         </intent>
     </queries>
 
@@ -17,16 +17,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SeraSila">
         <activity
-            android:name=".GuestWeightPlanner"
+            android:name=".activities.GuestWeightPlanner"
             android:exported="false" />
         <activity
-            android:name=".GuestWomanWorkoutUpper"
+            android:name=".activities.GuestWomanWorkoutUpper"
             android:exported="false" />
         <activity
-            android:name=".GuestWomanWorkout"
+            android:name=".activities.GuestWomanWorkout"
             android:exported="false" />
         <activity
-            android:name=".GuestMainMenu"
+            android:name=".activities.GuestMainMenu"
             android:exported="false"
             android:label="Guest Profile"
             android:screenOrientation="portrait" />
@@ -39,7 +39,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.SilaSera">

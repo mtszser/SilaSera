@@ -1,13 +1,11 @@
 package com.example.silasera
 
-import android.app.ActivityOptions
 import android.content.Intent
-import android.graphics.Color
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.silasera.activities.MainActivity
 
 class SignUp : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

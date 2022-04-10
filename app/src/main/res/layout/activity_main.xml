@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".activities.MainActivity"
     android:background="@drawable/matilogo">
 
     <LinearLayout
@@ -145,5 +145,12 @@
             android:textColor="@drawable/login_buttons_color"
             android:textStyle="bold|italic"
             android:textSize="20sp" />
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/googleSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </com.google.android.gms.common.SignInButton>
     </LinearLayout>
 </LinearLayout>

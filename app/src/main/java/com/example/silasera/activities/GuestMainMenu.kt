@@ -1,20 +1,17 @@
-package com.example.silasera
+package com.example.silasera.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.Toast
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
-import io.getstream.avatarview.AvatarView
-import io.getstream.avatarview.coil.loadImage
-import okhttp3.HttpUrl
-import java.io.File
-import kotlin.math.sign
+import com.example.silasera.ForgotPassword
+import com.example.silasera.R
+import com.example.silasera.adapters.CardDatasAdapter
+import com.example.silasera.dataclass.GuestCard
 
 class GuestMainMenu : AppCompatActivity() {
 
