@@ -34,6 +34,10 @@ class GuestWomanWorkout : YouTubeBaseActivity() {
 
     }
 
+    override fun onBackPressed() {
+      finish()
+    }
+
     private fun getYouTubeData() {
         val ytView = findViewById<YouTubePlayerView>(R.id.yt_view)
         ytView.initialize(R.string.api_key_.toString(), object:YouTubePlayer.OnInitializedListener{

@@ -73,7 +73,6 @@ class GuestMainMenu : AppCompatActivity() {
 
     private fun returnToMain() {
         startActivity(signInIntent)
-        finish()
     }
 
 }

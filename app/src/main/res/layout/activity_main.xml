@@ -133,22 +133,9 @@
             android:layout_height="2dp"
             android:background="@android:color/darker_gray"/>
 
-        <TextView
-            android:id="@+id/guestButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginTop="15dp"
-            android:text="Continue as a guest.."
-            android:fontFamily="sans-serif-medium"
-            android:textColor="@drawable/login_buttons_color"
-            android:textStyle="bold|italic"
-            android:textSize="20sp" />
-
         <com.google.android.gms.common.SignInButton
             android:id="@+id/sign_in_button"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

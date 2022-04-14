@@ -1,5 +1,6 @@
 package com.example.silasera.activities
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -17,6 +18,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.GoogleAuthProvider
 
 
 class MainActivity : AppCompatActivity()  {
@@ -89,11 +92,13 @@ class MainActivity : AppCompatActivity()  {
             startActivity(intent)
         }
 
-        val continueGuest = findViewById<TextView>(R.id.guestButton)
-        continueGuest.setOnClickListener {
-            val intent = Intent(this, GuestMainMenu::class.java)
-            startActivity(intent)
-        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = firebaseAuth.currentUser
+        updateUI(currentUser)
     }
 
     override fun onBackPressed() {
@@ -128,6 +133,7 @@ class MainActivity : AppCompatActivity()  {
             val task =
                 GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
+
         }
     }
 
@@ -136,6 +142,7 @@ class MainActivity : AppCompatActivity()  {
             val account = completedTask.getResult(
                 ApiException::class.java
             )
+            firebaseUser(account?.idToken!!)
             // Signed in successfully
 
             val googleId = account?.id ?: ""
@@ -162,10 +169,39 @@ class MainActivity : AppCompatActivity()  {
         } catch (e: ApiException) {
             // Sign in was unsuccessful
             Log.e(
-                "failed code=", e.statusCode.toString()
+                "Google sign in fail", e.statusCode.toString()
             )
         }
     }
+
+    private fun firebaseUser(idToken: String) {
+
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
+        firebaseAuth.signInWithCredential(credential).addOnCompleteListener(this) {task ->
+            if(task.isSuccessful) {
+                //Sign in Success, updates UI with signed user info
+                val user = firebaseAuth.currentUser
+                updateUI(user)
+
+            } else {
+                // If sign in fails, display a message to the user.
+                Log.w(TAG, "Sign in with created google credential failed", task.exception)
+                updateUI(null)
+            }
+        }
+    }
+
+
+
+    private fun updateUI(user: FirebaseUser?) {
+        val googleToken = user?.uid
+        val googleName = user?.displayName
+        val googlePhoto = user?.photoUrl.toString()
+
+    }
+
+
+
 
     private fun revokeAccess() {
         mGoogleSignInClient.revokeAccess()
