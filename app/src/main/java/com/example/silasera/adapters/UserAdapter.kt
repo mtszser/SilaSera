@@ -21,7 +21,6 @@ class UserAdapter(private val userList: ArrayList<User>): RecyclerView.Adapter<U
     override fun onBindViewHolder(holder: MyUserHolder, position: Int) {
         val currentItem = userList[position]
         holder.firstName.text = currentItem.firstname
-        holder.firstName
         holder.lastName.text = currentItem.lastname
     }
 

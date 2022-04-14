@@ -1,6 +1,8 @@
 package com.example.silasera.activities
 
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,7 +14,7 @@ import com.google.firebase.database.*
 
 class GuestWomanWorkout : YouTubeBaseActivity() {
 
-    private lateinit var dbref: DatabaseReference
+    private lateinit var dbReference: DatabaseReference
     private lateinit var userRecyclerView: RecyclerView
     private lateinit var userList: ArrayList<User>
 
@@ -21,7 +23,6 @@ class GuestWomanWorkout : YouTubeBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.guest_woman_workout)
-
 
         userRecyclerView = findViewById(R.id.woman_RV)
         userRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -66,8 +67,13 @@ class GuestWomanWorkout : YouTubeBaseActivity() {
 
     private fun getUserData() {
 
-        dbref = FirebaseDatabase.getInstance().getReference("Users")
-        dbref.addValueEventListener(object : ValueEventListener{
+        dbReference = FirebaseDatabase.getInstance().getReference("Users")
+        dbReference.child("Users").child("Justyna").get().addOnSuccessListener {
+            Log.i("firebase", "Got value ${it.value}")
+        }.addOnFailureListener{
+            Log.e("firebase", "Error getting data", it)
+        }
+        dbReference.addValueEventListener(object : ValueEventListener{
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){
@@ -75,12 +81,14 @@ class GuestWomanWorkout : YouTubeBaseActivity() {
 
                         val user = userSnapshot.getValue(User::class.java)
                         userList.add(user!!)
+
                     }
                     userRecyclerView.adapter = UserAdapter(userList)
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
+
             }
 
         })

@@ -1,33 +1,42 @@
 {
   "project_info": {
-    "project_number": "341430129492",
-    "project_id": "silasera-d8cce",
-    "storage_bucket": "silasera-d8cce.appspot.com"
+    "project_number": "592647137337",
+    "firebase_url": "https://silasera-f7482-default-rtdb.firebaseio.com",
+    "project_id": "silasera-f7482",
+    "storage_bucket": "silasera-f7482.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:341430129492:android:401585303c989462ddeec1",
+        "mobilesdk_app_id": "1:592647137337:android:e436658e09477db47545e8",
         "android_client_info": {
           "package_name": "com.example.silasera"
         }
       },
       "oauth_client": [
         {
-          "client_id": "341430129492-lv1f37nt9s70jgfttmsove6drgqkjjir.apps.googleusercontent.com",
+          "client_id": "592647137337-7vq56rcncrpha1194043ni29baabtdt3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.silasera",
+            "certificate_hash": "0da40c1f318d42849b3f8e2f036faf394445aad6"
+          }
+        },
+        {
+          "client_id": "592647137337-kof9vmnee1j01rkcd5uh8976leb16b0p.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBmjkK_Xc77qp0f2nv6rrwK8uN9Eszdvxk"
+          "current_key": "AIzaSyCq5M4_GUSPzCi-BK2Htn-M2aarJMX5IU0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "341430129492-lv1f37nt9s70jgfttmsove6drgqkjjir.apps.googleusercontent.com",
+              "client_id": "592647137337-kof9vmnee1j01rkcd5uh8976leb16b0p.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

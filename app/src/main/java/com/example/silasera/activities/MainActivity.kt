@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import com.example.silasera.ForgotPassword
 import com.example.silasera.R
 import com.example.silasera.SignUp
+import com.example.silasera.databinding.ActivityMainBinding
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.SignInClient
 import com.google.android.gms.common.api.ApiException
@@ -19,14 +21,38 @@ import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var dbrefer: FirebaseAuthException
-    private lateinit var oneTapClient: SignInClient
-    private lateinit var signInRequest: BeginSignInRequest
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var firebaseAuth: FirebaseAuth
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+
+        binding.loginButton.setOnClickListener {
+            val email = binding.loginEmail.text.toString()
+            val password = binding.loginPassword.text.toString()
+
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
+                    if (it.isSuccessful) {
+
+                        Toast.makeText(this, "Welcome $email", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, GuestMainMenu::class.java)
+                        startActivity(intent)
+
+                    } else {
+                        Toast.makeText(this, "Incorrect e-mail address or password.", Toast.LENGTH_LONG).show()
+                    }
+                }
+            }
+        }
+
+
+
 
 
         val signUp = findViewById<TextView>(R.id.sign_up_button)
