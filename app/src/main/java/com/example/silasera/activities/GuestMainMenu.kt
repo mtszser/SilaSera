@@ -15,6 +15,8 @@ import com.example.silasera.dataclass.GuestCard
 
 class GuestMainMenu : AppCompatActivity() {
 
+    private val signInIntent = Intent(this, MainActivity::class.java)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_guest_main_menu)
@@ -27,6 +29,12 @@ class GuestMainMenu : AppCompatActivity() {
             transformations(CircleCropTransformation())
         }
     }
+
+    override fun onBackPressed() {
+
+    }
+
+
     // Dodanie kart do Listy
     private fun createCards(): List<GuestCard> {
 
@@ -34,7 +42,7 @@ class GuestMainMenu : AppCompatActivity() {
         cards.add(GuestCard(R.drawable.womantest, "For Woman"))
         cards.add(GuestCard(R.drawable.mantest, "For Man"))
         cards.add(GuestCard(R.drawable.weightplanner, "WeightPlanner"))
-        cards.add(GuestCard(R.drawable.sign_in, "Sign In"))
+        cards.add(GuestCard(R.drawable.sign_in, "Logout"))
 
         return cards
     }
@@ -46,7 +54,7 @@ class GuestMainMenu : AppCompatActivity() {
         val womanIntent = Intent(this, GuestWomanWorkout::class.java)
         val manIntent = Intent(this, MainActivity::class.java)
         val weightplannerIntent = Intent(this, GuestWomanWorkout::class.java)
-        val signInIntent = Intent(this, ForgotPassword::class.java)
+
 
 
         val cardRecyclerView = findViewById<RecyclerView>(R.id.guest_recycler_view)
@@ -56,10 +64,16 @@ class GuestMainMenu : AppCompatActivity() {
                "For Woman" -> startActivity(womanIntent)
                "For Man" -> startActivity(manIntent)
                "WeightPlanner" -> startActivity(weightplannerIntent)
-               "Sign In" -> startActivity(signInIntent)
+               "Logout" -> returnToMain()
            }
 
 
         }
     }
+
+    private fun returnToMain() {
+        startActivity(signInIntent)
+        finish()
+    }
+
 }
