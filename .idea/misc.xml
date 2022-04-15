@@ -28,6 +28,8 @@
         <entry key="..\:/SilaSera/app/src/main/res/drawable/rounded.xml" value="2.625" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/sign_button_1.xml" value="0.3828125" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/sign_button_2.xml" value="0.3828125" />
+        <entry key="..\:/SilaSera/app/src/main/res/drawable/sila_sera_gradient.xml" value="0.176" />
+        <entry key="..\:/SilaSera/app/src/main/res/drawable/sila_sera_splash.xml" value="0.176" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/textcolor.xml" value="0.3828125" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/undo_button.xml" value="0.3828125" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/undobuton2.xml" value="0.3828125" />
@@ -39,6 +41,7 @@
         <entry key="..\:/SilaSera/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/activity_main_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/activity_sign_up.xml" value="0.36093943139678614" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/activity_splash.xml" value="0.21" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/activity_test_card.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/forgot_password.xml" value="0.2671875" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/guest_card_view_design.xml" value="0.33" />
