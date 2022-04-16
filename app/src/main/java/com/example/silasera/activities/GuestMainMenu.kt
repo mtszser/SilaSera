@@ -3,6 +3,7 @@ package com.example.silasera.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,11 +27,17 @@ class GuestMainMenu : AppCompatActivity() {
             setContentView(R.layout.activity_guest_main_menu)
             setCardsRecyclerView(createCards())
 
-            val img = findViewById<ImageView>(R.id.guestAvatar)
-            img.load("https://avatarfiles.alphacoders.com/105/thumb-105223.jpg") {
-                crossfade(true)
-                // transformacja z prostokąta na koło
-                transformations(CircleCropTransformation())
+
+        val intent = getIntent()
+        val gFirstName = intent.getStringExtra("gFirstName")
+        val nEditText = findViewById<EditText>(R.id.greetingGuestText2)
+        nEditText.setText(gFirstName)
+        val gImageUrl = intent.getStringExtra("gProfilePicUrl")
+        val img = findViewById<ImageView>(R.id.guestAvatar)
+        img.load("$gImageUrl") {
+            crossfade(true)
+            // transformacja z prostokąta na koło
+            transformations(CircleCropTransformation())
             }
     }
 

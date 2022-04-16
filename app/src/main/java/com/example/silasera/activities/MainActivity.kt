@@ -169,6 +169,8 @@ class MainActivity : AppCompatActivity()  {
             Log.i("Google ID Token", googleIdToken)
 
             val myIntent = Intent(this, GuestMainMenu::class.java)
+            myIntent.putExtra("gFirstName", googleFirstName)
+            myIntent.putExtra("gProfilePicUrl", googleProfilePicURL)
             startActivity(myIntent)
 
         } catch (e: ApiException) {
