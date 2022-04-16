@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
@@ -12,22 +13,25 @@ import com.example.silasera.ForgotPassword
 import com.example.silasera.R
 import com.example.silasera.adapters.CardDatasAdapter
 import com.example.silasera.dataclass.GuestCard
+import com.example.silasera.splash.SplashActivity
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.firebase.auth.FirebaseAuth
 
 class GuestMainMenu : AppCompatActivity() {
 
-    private val signInIntent = Intent(this, MainActivity::class.java)
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_guest_main_menu)
-        setCardsRecyclerView(createCards())
+            setContentView(R.layout.activity_guest_main_menu)
+            setCardsRecyclerView(createCards())
 
-        val img = findViewById<ImageView>(R.id.guestAvatar)
-        img.load("https://avatarfiles.alphacoders.com/105/thumb-105223.jpg"){
-            crossfade(true)
-            // transformacja z prostokąta na koło
-            transformations(CircleCropTransformation())
-        }
+            val img = findViewById<ImageView>(R.id.guestAvatar)
+            img.load("https://avatarfiles.alphacoders.com/105/thumb-105223.jpg") {
+                crossfade(true)
+                // transformacja z prostokąta na koło
+                transformations(CircleCropTransformation())
+            }
     }
 
     override fun onBackPressed() {
@@ -72,7 +76,10 @@ class GuestMainMenu : AppCompatActivity() {
     }
 
     private fun returnToMain() {
+        val signInIntent = Intent(this, SplashActivity::class.java)
+        Toast.makeText(this, "You have been logged out.", Toast.LENGTH_SHORT).show()
         startActivity(signInIntent)
+        finish()
     }
-
 }
+

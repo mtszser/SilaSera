@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity()  {
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
 
+
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.web_client_id))
             .requestEmail()
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity()  {
             signIn()
         }
         signOut()
+        firebaseAuth.signOut()
         revokeAccess()
 
 
