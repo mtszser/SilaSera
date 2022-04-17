@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/weightMainLayer"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F2F1"
+    tools:context=".activities.WeightPlanner">
+
+    <LinearLayout
+        android:id="@+id/weightTopMainLayer"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:padding="5dp"
+        android:background="@drawable/guest_top_corner_radius">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageButton
+                android:id="@+id/weightLeftArrow"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/left_arrow"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/undo_button"
+                android:contentDescription="@string/backArrow">
+            </ImageButton>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/weightPlannerCalculator"
+                android:textStyle="bold"
+                android:textSize="21sp"
+                android:gravity="center"
+                android:textColor="@color/black">
+
+            </TextView>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

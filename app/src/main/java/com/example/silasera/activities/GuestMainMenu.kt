@@ -24,10 +24,13 @@ class GuestMainMenu : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_guest_main_menu)
-            setCardsRecyclerView(createCards())
+        setContentView(R.layout.activity_guest_main_menu)
+        setCardsRecyclerView(createCards())
+        getUserInfo()
 
+    }
 
+    private fun getUserInfo() {
         val intent = getIntent()
         val gFirstName = intent.getStringExtra("gFirstName")
         val nEditText = findViewById<EditText>(R.id.greetingGuestText2)
@@ -38,7 +41,7 @@ class GuestMainMenu : AppCompatActivity() {
             crossfade(true)
             // transformacja z prostokąta na koło
             transformations(CircleCropTransformation())
-            }
+        }
     }
 
     override fun onBackPressed() {
@@ -64,7 +67,7 @@ class GuestMainMenu : AppCompatActivity() {
 
         val womanIntent = Intent(this, GuestWomanWorkout::class.java)
         val manIntent = Intent(this, MainActivity::class.java)
-        val weightplannerIntent = Intent(this, GuestWomanWorkout::class.java)
+        val weightPlannerIntent = Intent(this, WeightPlanner::class.java)
 
 
 
@@ -74,7 +77,7 @@ class GuestMainMenu : AppCompatActivity() {
            when (it.buttonText) {
                "For Woman" -> startActivity(womanIntent)
                "For Man" -> startActivity(manIntent)
-               "WeightPlanner" -> startActivity(weightplannerIntent)
+               "WeightPlanner" -> startActivity(weightPlannerIntent)
                "Logout" -> returnToMain()
            }
 

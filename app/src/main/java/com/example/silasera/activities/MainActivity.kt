@@ -22,6 +22,7 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import kotlin.system.exitProcess
 
 
 class MainActivity : AppCompatActivity()  {
@@ -36,7 +37,6 @@ class MainActivity : AppCompatActivity()  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        installSplashScreen()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
@@ -101,9 +101,17 @@ class MainActivity : AppCompatActivity()  {
 
     override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = firebaseAuth.currentUser
         updateUI(currentUser)
+        // Check if user is signed in (non-null) and update UI accordingly.
+        //If REMEMBER ME is on.
+//        if (currentUser != null) {
+//            Toast.makeText(this, "Welcome Back!", Toast.LENGTH_SHORT).show()
+//            updateUI(currentUser)
+        // Its first time or REMEMBER ME is off.
+//        } else {
+//            Toast.makeText(this, "Hello, SIGN IN to get FIT!", Toast.LENGTH_SHORT).show()
+//        }
     }
 
     override fun onBackPressed() {
