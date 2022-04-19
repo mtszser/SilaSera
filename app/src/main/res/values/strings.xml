@@ -3,7 +3,7 @@
     <string name="sign_in">*Sign in*</string>
     <string name="api_key_">AIzaSyCq5M4_GUSPzCi-BK2Htn-M2aarJMX5IU0</string>
     <string name="web_client_id">592647137337-kof9vmnee1j01rkcd5uh8976leb16b0p.apps.googleusercontent.com</string>
-    <string name="weightPlannerCalculator">Weight Planner Calculator</string>
+    <string name="weightPlanner">Weight Planner</string>
     <string name="backArrow">weightLeftArrow</string>
 
     <string-array name="sex">

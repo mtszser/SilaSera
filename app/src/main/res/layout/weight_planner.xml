@@ -11,34 +11,27 @@
     <LinearLayout
         android:id="@+id/weightTopMainLayer"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:padding="5dp"
-        android:background="@drawable/guest_top_corner_radius">
+        android:background="@drawable/guest_top_bar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
-
-            <ImageButton
-                android:id="@+id/weightLeftArrow"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/left_arrow"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="@drawable/undo_button"
-                android:contentDescription="@string/backArrow">
-            </ImageButton>
+            android:layout_gravity="center"
+            android:padding="10dp">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/weightPlannerCalculator"
-                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/alike_angular"
+                android:text="@string/weightPlanner"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#272626"
                 android:textSize="21sp"
-                android:gravity="center"
-                android:textColor="@color/black">
+                android:textStyle="bold">
 
             </TextView>
         </LinearLayout>
@@ -48,7 +41,6 @@
         android:id="@+id/weightMainContentLayer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/content_background"
         android:orientation="vertical">
 
         <fragment
@@ -67,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             app:menu="@menu/nav_bottom_bar"
-            android:background="@drawable/guest_top_corner_radius"
+            android:background="@color/cheeseYellow"
             />
     </FrameLayout>
 </LinearLayout>

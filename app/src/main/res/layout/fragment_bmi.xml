@@ -3,14 +3,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cheeseYellow"
     tools:context=".fragments.Bmi">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/bmi_main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#F1EDED"
         android:gravity="center"
-        android:text="BMI FRAGMENT" />
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="15dp"
+            android:background="@drawable/guest_top_bar">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Oblicz swój wskaźnik BMI"
+                android:textSize="30sp"
+                android:textColor="#3C3B3B"
+                android:layout_marginBottom="15dp">
+            </TextView>
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Waga:"
+                    android:textSize="23sp"
+                    android:textColor="#3C3B3B">
+                </TextView>
+                <EditText
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#3C3B3B"
+                    android:textSize="23sp"
+                    android:padding="5dp"
+                    android:backgroundTint="@color/black"
+                    android:textAlignment="center"
+                    android:inputType="numberDecimal"
+                    android:layout_marginBottom="15dp">
+                </EditText>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wzrost:"
+                android:textSize="23sp"
+                android:textColor="#3C3B3B">
+            </TextView>
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textColor="#3C3B3B"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:inputType="numberDecimal"
+                android:backgroundTint="@color/black"
+                android:textSize="23sp"
+                android:layout_marginBottom="15dp">
+            </EditText>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
 
 </FrameLayout>

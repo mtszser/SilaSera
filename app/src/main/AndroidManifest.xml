@@ -34,9 +34,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.GuestWeightPlanner"
-            android:exported="false" />
-        <activity
             android:name=".activities.GuestWomanWorkoutUpper"
             android:exported="false" />
         <activity
