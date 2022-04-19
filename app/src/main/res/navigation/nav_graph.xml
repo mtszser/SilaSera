@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/bmi">
+
+    <fragment
+        android:id="@+id/bmi"
+        android:name="com.example.silasera.fragments.Bmi"
+        android:label="fragment_bmi"
+        tools:layout="@layout/fragment_bmi" />
+    <fragment
+        android:id="@+id/cpm"
+        android:name="com.example.silasera.fragments.Cpm"
+        android:label="fragment_cpm"
+        tools:layout="@layout/fragment_cpm" />
+    <fragment
+        android:id="@+id/water"
+        android:name="com.example.silasera.fragments.Water"
+        android:label="fragment_water"
+        tools:layout="@layout/fragment_water" />
+</navigation>

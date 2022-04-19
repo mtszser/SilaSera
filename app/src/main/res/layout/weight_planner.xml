@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/weightMainLayer"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -43,21 +44,30 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/weightMainContentLayer"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:background="#F3F2F1"
-        android:padding="20dp"
-        android:gravity="center"
-        android:layout_height="match_parent">
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/content_background"
+        android:orientation="vertical">
+
+        <fragment
+            android:id="@+id/nav_host_fragment_cont"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            app:navGraph="@navigation/nav_graph">
+        </fragment>
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav_view"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/weight_planner_card_design">
-
-        </androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
-
-
+            android:layout_gravity="bottom"
+            app:menu="@menu/nav_bottom_bar"
+            android:background="@drawable/guest_top_corner_radius"
+            />
+    </FrameLayout>
 </LinearLayout>

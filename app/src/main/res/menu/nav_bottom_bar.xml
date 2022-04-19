@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bmi"
+        android:icon="@drawable/bmi"
+        android:title="BMI" />
+    <item
+        android:id="@+id/cpm"
+        android:icon="@drawable/kcal"
+        android:title="CPM" />
+    <item
+        android:id="@+id/water"
+        android:icon="@drawable/drop"
+        android:title="Water" />
+</menu>

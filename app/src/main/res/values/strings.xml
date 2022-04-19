@@ -5,4 +5,22 @@
     <string name="web_client_id">592647137337-kof9vmnee1j01rkcd5uh8976leb16b0p.apps.googleusercontent.com</string>
     <string name="weightPlannerCalculator">Weight Planner Calculator</string>
     <string name="backArrow">weightLeftArrow</string>
+
+    <string-array name="sex">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="palNumbers">
+        <item>1.4</item>
+        <item>1.6</item>
+        <item>1.8</item>
+        <item>2.0</item>
+        <item>2.2</item>
+        <item>2.4</item>
+        <item>2.5</item>
+
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
