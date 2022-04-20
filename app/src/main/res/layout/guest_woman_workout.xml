@@ -27,15 +27,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
-                    android:text="Let's start with a Workout Plan"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Zacznijmy od planu treningowego"
+                    android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="25sp">
+                    android:textSize="23sp">
                 </TextView>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
-                    android:text="Choose one of my programs based on your daily activities. "
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Wybierz ten, który najbardziej Cię interesuje."
                     android:textColor="@color/black"
                     android:textSize="15sp">
                 </TextView>

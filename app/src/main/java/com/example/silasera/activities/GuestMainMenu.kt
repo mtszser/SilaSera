@@ -53,10 +53,10 @@ class GuestMainMenu : AppCompatActivity() {
     private fun createCards(): List<GuestCard> {
 
         val cards = ArrayList<GuestCard>()
-        cards.add(GuestCard(R.drawable.womantest, "For Woman"))
-        cards.add(GuestCard(R.drawable.mantest, "For Man"))
-        cards.add(GuestCard(R.drawable.weightplanner, "WeightPlanner"))
-        cards.add(GuestCard(R.drawable.sign_in, "Logout"))
+        cards.add(GuestCard(R.drawable.womantest, "Dla Kobiet"))
+        cards.add(GuestCard(R.drawable.mantest, "Dla Mężczyzn"))
+        cards.add(GuestCard(R.drawable.weightplanner, "Zaplanuj Wagę"))
+        cards.add(GuestCard(R.drawable.sign_in, "Wyloguj się"))
 
         return cards
     }
@@ -75,10 +75,10 @@ class GuestMainMenu : AppCompatActivity() {
         cardRecyclerView.layoutManager = LinearLayoutManager(this)
         cardRecyclerView.adapter = CardDatasAdapter(cards){
            when (it.buttonText) {
-               "For Woman" -> startActivity(womanIntent)
-               "For Man" -> startActivity(manIntent)
-               "WeightPlanner" -> startActivity(weightPlannerIntent)
-               "Logout" -> returnToMain()
+               "Dla Kobiet" -> startActivity(womanIntent)
+               "Dla Mężczyzn" -> startActivity(manIntent)
+               "Zaplanuj Wagę" -> startActivity(weightPlannerIntent)
+               "Wyloguj się" -> returnToMain()
            }
 
 
@@ -87,7 +87,7 @@ class GuestMainMenu : AppCompatActivity() {
 
     private fun returnToMain() {
         val signInIntent = Intent(this, SplashActivity::class.java)
-        Toast.makeText(this, "You have been logged out.", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Zostałeś Wylogowany.", Toast.LENGTH_SHORT).show()
         startActivity(signInIntent)
         finish()
     }

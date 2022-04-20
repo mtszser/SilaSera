@@ -19,12 +19,14 @@
             android:orientation="vertical"
             android:gravity="center"
             android:padding="15dp"
-            android:background="@drawable/guest_top_bar">
+            android:background="@drawable/cheese_rectangle">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Oblicz swój wskaźnik BMI"
+                android:text="Oblicz swoje BMI"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
                 android:textSize="30sp"
                 android:textColor="#3C3B3B"
                 android:layout_marginBottom="15dp">
@@ -32,12 +34,13 @@
 
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Waga:"
-                    android:textSize="23sp"
-                    android:textColor="#3C3B3B">
-                </TextView>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Waga:"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="23sp"
+                android:textColor="#3C3B3B">
+            </TextView>
                 <EditText
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
@@ -53,6 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Wzrost:"
+                android:fontFamily="sans-serif-medium"
                 android:textSize="23sp"
                 android:textColor="#3C3B3B">
             </TextView>

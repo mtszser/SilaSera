@@ -11,10 +11,9 @@ class ForgotPassword : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot_password)
 
-        val backButton = findViewById<ImageView>(R.id.undoBtn)
-        backButton.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 }

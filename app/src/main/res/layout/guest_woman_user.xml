@@ -30,8 +30,9 @@
                     android:id="@+id/woman_tv_firstName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="workout name"
-                    android:fontFamily="@font/alfa_slab_one"
+                    android:text="Nazwa planu"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="35sp">
                 </TextView>
@@ -41,8 +42,8 @@
                     android:id="@+id/woman_tv_lastName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-condensed-medium"
-                    android:text="workout description"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Opis planu"
                     android:textColor="@color/black"
                     android:textSize="20sp">
                 </TextView>

@@ -23,15 +23,8 @@ class Bmi : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val bmiFragment = inflater.inflate(R.layout.fragment_bmi, container, false)
-
         val activity = activity as Context
-
-        val spinner = bmiFragment.findViewById<Spinner>(R.id.spinnerBMI)
-        val arrayAdapter = ArrayAdapter<String>(activity, R.layout.support_simple_spinner_dropdown_item, gender, )
-
-        spinner.adapter = arrayAdapter
         return bmiFragment
-
     }
 
 

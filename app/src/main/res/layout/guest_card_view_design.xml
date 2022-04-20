@@ -35,7 +35,8 @@
         android:textAlignment="center"
         android:gravity="center"
         android:textColor="@drawable/guest_bwp_color"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="sans-serif-medium"
+        android:textStyle="bold"
         android:textSize="23sp">
     </TextView>
     </LinearLayout>

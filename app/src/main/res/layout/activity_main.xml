@@ -53,7 +53,7 @@
             android:drawablePadding="5dp"
             android:ems="10"
             android:layout_marginTop="10dp"
-            android:hint="Password"
+            android:hint="Hasło"
             android:inputType="textPassword"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -65,7 +65,8 @@
             android:layout_height="wrap_content"
             android:gravity="right"
             android:layout_marginRight="8dp"
-            android:text="Forgot Password?"
+            android:fontFamily="sans-serif-medium"
+            android:text="Zapomniałeś hasła?"
             android:clickable="true"
             android:focusable="true"
             android:textSize="15sp"
@@ -89,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@drawable/sign_button_1"
-                android:text="Sign in"
+                android:text="Zaloguj się"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -108,8 +109,9 @@
                     android:background="@android:color/transparent"
                     android:focusable="false"
                     android:inputType="textPersonName"
+                    android:fontFamily="sans-serif-medium"
                     android:textColor="@color/white"
-                    android:text="Don't have an account?"
+                    android:text="Nie masz jeszcze konta?"
                     android:textSize="20sp" />
 
                 <TextView
@@ -119,7 +121,7 @@
                     android:layout_marginLeft="10dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:text="Sign up here"
+                    android:text="Kliknij tutaj"
                     android:fontFamily="sans-serif-medium"
                     android:textColor="@drawable/login_buttons_color"
                     android:textSize="20sp"

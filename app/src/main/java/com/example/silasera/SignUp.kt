@@ -32,23 +32,21 @@ class SignUp : AppCompatActivity() {
 
                     firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
                         if (it.isSuccessful){
-
-                            Toast.makeText(this, "You can now Sign In!", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this, MainActivity::class.java)
-                            startActivity(intent)
+                            Toast.makeText(this, "Rejestracja przebiegła pomyślnie.", Toast.LENGTH_SHORT).show()
+                            finish()
 
                         }else if(password.length < 6 && confirmPass.length < 6){
-                            Toast.makeText(this, "Password must be at least 6 characters!", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "Hasło nie może być krótsze niż 6 znaków!", Toast.LENGTH_LONG).show()
                         } else {
-                            Toast.makeText(this, "Invalid email address or it's already taken.", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "Nieprawidłowy email lub hasło!", Toast.LENGTH_LONG).show()
                         }
                     }
 
                 } else {
-                    Toast.makeText(this, "Password is not matching!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Hasła się nie zgadzają!", Toast.LENGTH_LONG).show()
                 }
             }else {
-                Toast.makeText(this, "Empty Fields are not allowed!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Uzupełnij wszystkie okienka!", Toast.LENGTH_LONG).show()
             }
         }
 
@@ -57,13 +55,8 @@ class SignUp : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
             overridePendingTransition(R.anim.left_slide_out, R.anim.right_slide_in)
         }
-
-
-        val backButton = findViewById<ImageView>(R.id.undoBtn)
-        backButton.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.left_slide_out, R.anim.right_slide_in)
-        }
+    }
+    override fun onBackPressed() {
+        finish()
     }
 }

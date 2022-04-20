@@ -115,13 +115,14 @@ class MainActivity : AppCompatActivity()  {
     }
 
     override fun onBackPressed() {
-        if(backPressedTime + 2000 > System.currentTimeMillis()) {
-            super.onBackPressed()
-            finish()
-        } else {
-            Toast.makeText(this, "Press again to exit app", Toast.LENGTH_LONG).show()
-        }
-        backPressedTime = System.currentTimeMillis()
+//        if(backPressedTime + 2000 > System.currentTimeMillis()) {
+//            super.onBackPressed()
+//            finish()
+//        } else {
+//            Toast.makeText(this, "Wcisnij jeszcze raz by wyłączy", Toast.LENGTH_LONG).show()
+//        }
+//        backPressedTime = System.currentTimeMillis()
+        finish()
     }
 
 

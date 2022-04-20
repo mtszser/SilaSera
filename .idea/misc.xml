@@ -7,6 +7,7 @@
         <entry key="..\:/SilaSera/app/src/main/res/drawable-v24/cheese_buttons.xml" value="0.2833333333333333" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable-v24/ed_border.xml" value="0.352" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2833333333333333" />
+        <entry key="..\:/SilaSera/app/src/main/res/drawable/cheese_rectangle.xml" value="0.2205" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/content_background.xml" value="0.176" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/content_container.xml" value="0.176" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/ed_border.xml" value="0.352" />
@@ -41,6 +42,9 @@
         <entry key="..\:/SilaSera/app/src/main/res/drawable/weightplanner_et.xml" value="0.176" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/woman_card_color.xml" value="0.352" />
         <entry key="..\:/SilaSera/app/src/main/res/font/alfa_slab_one.xml" value="0.321875" />
+        <entry key="..\:/SilaSera/app/src/main/res/font/alike_angular.xml" value="0.24375" />
+        <entry key="..\:/SilaSera/app/src/main/res/font/inknut_antiqua_black.xml" value="0.24375" />
+        <entry key="..\:/SilaSera/app/src/main/res/font/wendy_one.xml" value="0.24375" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/activity_forgot_password.xml" value="0.33" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/activity_guest_main_menu.xml" value="0.25" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/activity_main.xml" value="0.33" />
