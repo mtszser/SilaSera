@@ -5,6 +5,12 @@
     <string name="web_client_id">592647137337-kof9vmnee1j01rkcd5uh8976leb16b0p.apps.googleusercontent.com</string>
     <string name="zaplanujWage">Zaplanuj Wagę</string>
     <string name="backArrow">weightLeftArrow</string>
+    <string name="underweight">Co wskazuje na niedowagę. Być może jesz zbyt mało lub jesteś w stanie chorobowym, sprawdź zakładkę CPM po więcej wskazówek."</string>
+    <string name="healthyweight">Co wskazuje, że wszystko jest w normie. Tak trzymaj! Po więcej wskazówek zapraszam do zakładki CPM</string>
+    <string name="overweight">Co wskazuje na nadwagę. Najlepszym sposobem by schudnąć, jest kombinacja odpowiedniej
+        diety i ćwiczeń. Po więcej informacji zapraszam do zakładki CPM</string>
+    <string name="obeseweight">Co wskazuje na otyłość. Najlepszym sposobem by schudnąć, jest kombinacja odpowiedniej
+        diety i ćwiczeń. Być może potrzebujesz też opini lekarza.</string>
 
     <string-array name="sex">
         <item>Male</item>
@@ -21,6 +27,4 @@
         <item>2.5</item>
 
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

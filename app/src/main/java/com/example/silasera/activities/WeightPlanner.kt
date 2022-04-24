@@ -26,7 +26,7 @@ class WeightPlanner : AppCompatActivity() {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment_cont)
         setupWithNavController(binding.bottomNavView, navController)
 
-        val fragmentBmi = Fragment(R.layout.fragment_bmi)
+//        val fragmentBmi = Fragment(R.layout.fragment_bmi)
 
 
     }

@@ -3,14 +3,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1EDED"
     tools:context=".fragments.Cpm">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/cpm_main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="CPM FRAGMENT" />
+        android:background="@color/white"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cheeseYellow">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Całkowita Przemiana Materii"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="30sp"
+                android:textColor="#232222"
+                android:padding="10dp">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="20dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Twoja waga(kg):"
+                android:textAlignment="center"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="23sp"
+                android:textColor="#3C3B3B">
+            </TextView>
+            <EditText
+                android:id="@+id/cpm_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#3C3B3B"
+                android:textSize="23sp"
+                android:padding="5dp"
+                android:text="0.0"
+                android:textAlignment="center"
+                android:background="@drawable/cheese_rectangle"
+                android:inputType="numberDecimal"
+                android:layout_marginBottom="15dp">
+            </EditText>
+
+            <Button
+                android:id="@+id/cpm_button"
+                android:layout_width="150dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:layout_height="match_parent"
+                android:background="@drawable/sign_button_1"
+                android:text="oblicz">
+            </Button>
+            <TextView
+                android:id="@+id/cpm_your_cpm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textSize="23sp"
+                android:fontFamily="sans-serif-medium"
+                android:text="">
+            </TextView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </FrameLayout>

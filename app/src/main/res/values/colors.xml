@@ -24,4 +24,7 @@
     <color name="normalStateColor">#201F1F</color>
     <color name="invisible">#00FFD15C</color>
     <color name="gradient">#F1B51B</color>
+    <color name="goodBMI">#94EF63</color>
+    <color name="badBMI">#FF3535</color>
+    <color name="bubble">#689EFA</color>
 </resources>

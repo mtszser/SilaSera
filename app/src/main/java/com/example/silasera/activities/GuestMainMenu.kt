@@ -87,7 +87,7 @@ class GuestMainMenu : AppCompatActivity() {
 
     private fun returnToMain() {
         val signInIntent = Intent(this, SplashActivity::class.java)
-        Toast.makeText(this, "Zostałeś Wylogowany.", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Zostałeś wylogowany.", Toast.LENGTH_SHORT).show()
         startActivity(signInIntent)
         finish()
     }
