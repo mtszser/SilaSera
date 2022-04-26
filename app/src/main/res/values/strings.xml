@@ -18,13 +18,12 @@
     </string-array>
 
     <string-array name="palNumbers">
-        <item>1.4</item>
-        <item>1.6</item>
-        <item>1.8</item>
-        <item>2.0</item>
-        <item>2.2</item>
-        <item>2.4</item>
-        <item>2.5</item>
+        <item>1.2 - Pacjent leżący w łóżku</item>
+        <item>1.4 - Aktywność fizyczna niska</item>
+        <item>1.6 - Aktywność umiarkowana</item>
+        <item>1.8 - Aktywny tryb życia</item>
+        <item>2.0 - Bardzo aktywny tryb życia</item>
+        <item>2.4 - Ciężki wyczynowy sport</item>
 
     </string-array>
 </resources>

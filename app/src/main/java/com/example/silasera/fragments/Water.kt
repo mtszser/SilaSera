@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.example.silasera.R
+import java.math.RoundingMode
 
 class Water : Fragment() {
 
@@ -47,12 +48,14 @@ class Water : Fragment() {
                                 } in 50.0..199.9 -> {
                                 result = weight * 35
                                 val waterGlass = result / 250
+                                val roundedGlass =
+                                    waterGlass.toBigDecimal().setScale(1, RoundingMode.HALF_EVEN).toDouble()
                                 if (result < 2000.0 ){
                                     waterResult.text = "Twoje zapotrzebowanie na wodę wynosi minimum 2000 ml. " +
                                             "Co odpowiada 8 szklankom wody."
                                 } else {
                                     waterResult.text = "Twoje zapotrzebowanie na wodę wynosi minimum $result ml " +
-                                            "Co odpowiada około $waterGlass szklankom wody."
+                                            "Co odpowiada około $roundedGlass szklankom wody."
                                 }
                                 }
                             }

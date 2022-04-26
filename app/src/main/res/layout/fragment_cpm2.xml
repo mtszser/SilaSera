@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.Cpm2">
+
+    <LinearLayout
+        android:id="@+id/cpm_main_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/cheeseYellow">
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Całkowita Przemiana Materii"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="26sp"
+            android:textColor="#232222"
+            android:padding="10dp">
+            </TextView>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Twoja podstawowa przemiana materii(PPM) wynosi:"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="23sp"
+            android:textColor="#3C3B3B">
+        </TextView>
+        <TextView
+            android:id="@+id/cpm2_ppm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#3C3B3B"
+            android:textSize="23sp"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:text=""
+            android:textAlignment="center"
+            android:background="@drawable/cheese_rectangle"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="15dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dodaj współczynnik aktywności:"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="23sp"
+            android:textColor="#3C3B3B">
+        </TextView>
+        <Spinner
+            android:id="@+id/cpm2_pal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            android:textAlignment="center"
+            android:popupBackground="@color/white"
+            android:background="@drawable/cheese_rectangle"
+            android:layout_marginBottom="15dp">
+        </Spinner>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cpm2_button_back"
+                android:layout_width="150dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:layout_height="match_parent"
+                android:background="@drawable/sign_button_1"
+                android:text="Cofnij"
+                android:layout_marginEnd="10dp">
+            </Button>
+
+            <Button
+                android:id="@+id/cpm2_button"
+                android:layout_width="150dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:layout_height="match_parent"
+                android:background="@drawable/sign_button_1"
+                android:text="Oblicz">
+            </Button>
+
+        </LinearLayout>
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cpm2_ppm_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/cpm2_cpm_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#3C3B3B"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:fontFamily="sans-serif-medium">
+            </TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</FrameLayout>
