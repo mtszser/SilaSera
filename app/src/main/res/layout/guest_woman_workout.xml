@@ -48,24 +48,27 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/woman_RV"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_fragment_womanWorkout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/guest_woman_user">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="match_parent"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/woman_nav_graph">
 
-        <com.google.android.youtube.player.YouTubePlayerView
-            android:id="@+id/yt_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </com.google.android.youtube.player.YouTubePlayerView>
+<!--            <com.google.android.youtube.player.YouTubePlayerView-->
+<!--                android:id="@+id/yt_view"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content">-->
+<!--            </com.google.android.youtube.player.YouTubePlayerView>-->
 
-    </LinearLayout>
+        </androidx.fragment.app.FragmentContainerView>
+
+    </FrameLayout>
 
 </LinearLayout>

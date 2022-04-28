@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import com.example.silasera.R
 
@@ -32,6 +33,10 @@ class Cpm : Fragment() {
         val cpmMan = cpmFragment.findViewById<ImageView>(R.id.cpm_man)
         val cpmWoman = cpmFragment.findViewById<ImageView>(R.id.cpm_woman)
 
+        if (gender) {
+            cpmMan.setImageResource(R.drawable.man_focus)
+        }
+
 
 
         cpmMan.setOnClickListener{
@@ -50,38 +55,45 @@ class Cpm : Fragment() {
 
         cpmButton.setOnClickListener{
             Log.d("gender", "$gender")
+
             val weight = cpmWeight.text.toString().toDouble()
             val height = cpmHeight.text.toString().toDouble()
             val age = cpmAge.text.toString().toInt()
 
-            // PPM (kobiety) =  (10 x masa ciała [kg])+(6,25 x wzrost [cm])-(5 x [wiek]) – 161
-            //
-            //PPM (mężczyźni) = (10 x masa ciała [kg])+(6, 25 x wzrost [cm])-(5 x [wiek]) + 5
+            if (weight <= 0.0 || weight > 150.0 || height <= 0.0 || age < 18
+                || age > 99.9 || height > 231){
+
+                Toast.makeText(context, "Dane są nieprawidłowe.", Toast.LENGTH_SHORT).show()
+            } else {
+
+                // PPM (kobiety) =  (10 x masa ciała [kg])+(6,25 x wzrost [cm])-(5 x [wiek]) – 161
+                //
+                //PPM (mężczyźni) = (10 x masa ciała [kg])+(6, 25 x wzrost [cm])-(5 x [wiek]) + 5
 
 
-            val yourPPM = if (!gender){
+                val yourPPM = if (!gender) {
                     // for woman (false)
-                (10 * weight) + (6.25 * height) - (5 * age) - 161
-            } else { // for man (true)
-                (10 * weight) + (6.25 * height) - (5 * age) + 5
+                    (10 * weight) + (6.25 * height) - (5 * age) - 161
+                } else { // for man (true)
+                    (10 * weight) + (6.25 * height) - (5 * age) + 5
+                }
+
+
+                //Transfer data from cpm1 fragment
+                val bundle = Bundle()
+                bundle.putDouble("weight", weight)
+                bundle.putDouble("height", height)
+                bundle.putInt("age", age)
+                bundle.putDouble("ppm", yourPPM)
+                bundle.putBoolean("gender", gender)
+
+                //Transfer to CPM2 fragment
+                val secondCPM = Cpm2()
+                secondCPM.arguments = bundle
+                val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+                transaction.replace(R.id.nav_host_fragment_cont, secondCPM)
+                transaction.commit()
             }
-
-
-
-            //Transfer data from cpm1 fragment
-            val bundle = Bundle()
-            bundle.putDouble("weight", weight)
-            bundle.putDouble("height", height)
-            bundle.putInt("age", age)
-            bundle.putDouble("ppm", yourPPM)
-            bundle.putBoolean("gender", gender)
-
-            //Transfer to CPM2 fragment
-            val secondCPM = Cpm2()
-            secondCPM.arguments = bundle
-            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-            transaction.replace(R.id.nav_host_fragment_cont, secondCPM)
-            transaction.commit()
         }
 
 

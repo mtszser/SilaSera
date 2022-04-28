@@ -46,7 +46,7 @@ class Cpm2 : Fragment() {
                 position: Int,
                 id: Long
             ) {
-                Toast.makeText(context, "selected pal number is: " +palNumbers[position], Toast.LENGTH_SHORT).show()
+//                Toast.makeText(context, "selected pal number is: " +palNumbers[position], Toast.LENGTH_SHORT).show()
                 when(position) {
                     0 ->  palNumber = 1.2
                     1 -> palNumber = 1.4

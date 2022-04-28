@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/woman_nav_graph"
+    app:startDestination="@id/womanWorkoutPlans">
+
+    <fragment
+        android:id="@+id/womanWorkoutPlans"
+        android:name="com.example.silasera.womanWorkout.WomanWorkoutPlans"
+        android:label="woman_workout_plans"
+        tools:layout="@layout/woman_workout_plans" >
+        <action
+            android:id="@+id/action_womanWorkoutPlans_to_womanWorkoutUpper"
+            app:destination="@id/womanWorkoutUpper" />
+        <action
+            android:id="@+id/action_womanWorkoutPlans_to_womanWorkoutCardio"
+            app:destination="@id/womanWorkoutCardio" />
+        <action
+            android:id="@+id/action_womanWorkoutPlans_to_womanWorkoutLower"
+            app:destination="@id/womanWorkoutLower" />
+    </fragment>
+    <fragment
+        android:id="@+id/womanWorkoutUpper"
+        android:name="com.example.silasera.womanWorkout.WomanWorkoutUpper"
+        android:label="woman_workout_upper"
+        tools:layout="@layout/woman_workout_upper" />
+    <fragment
+        android:id="@+id/womanWorkoutCardio"
+        android:name="com.example.silasera.womanWorkout.WomanWorkoutCardio"
+        android:label="woman_workout_cardio"
+        tools:layout="@layout/woman_workout_cardio" />
+    <fragment
+        android:id="@+id/womanWorkoutLower"
+        android:name="com.example.silasera.womanWorkout.WomanWorkoutLower"
+        android:label="woman_workout_lower"
+        tools:layout="@layout/woman_workout_lower" />
+</navigation>
