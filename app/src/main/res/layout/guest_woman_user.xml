@@ -10,8 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@color/white"
         android:gravity="center"
-        android:padding="5dp">
+        android:padding="10dp">
 
 
         <LinearLayout
@@ -21,13 +22,13 @@
             android:gravity="center">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center">
 
                 <TextView
-                    android:id="@+id/woman_tv_firstName"
+                    android:id="@+id/woman_tv_workoutName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nazwa planu"
@@ -39,24 +40,16 @@
 
 
                 <TextView
-                    android:id="@+id/woman_tv_lastName"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/woman_tv_workoutDesc"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
                     android:text="Opis planu"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="20sp">
                 </TextView>
             </LinearLayout>
-
-            <ImageView
-                android:id="@+id/woman_cards_image_arrow"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/cheesearrow">
-
-            </ImageView>
 
         </LinearLayout>
 

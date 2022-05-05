@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_womanWorkoutPlans_to_womanWorkoutLower"
             app:destination="@id/womanWorkoutLower" />
+        <action
+            android:id="@+id/action_womanWorkoutPlans_to_womanWorkoutFbw"
+            app:destination="@id/womanWorkoutFbw" />
     </fragment>
     <fragment
         android:id="@+id/womanWorkoutUpper"
@@ -35,4 +38,9 @@
         android:name="com.example.silasera.womanWorkout.WomanWorkoutLower"
         android:label="woman_workout_lower"
         tools:layout="@layout/woman_workout_lower" />
+    <fragment
+        android:id="@+id/womanWorkoutFbw"
+        android:name="com.example.silasera.womanWorkout.WomanWorkoutFbw"
+        android:label="woman_workout_fbw"
+        tools:layout="@layout/woman_workout_fbw" />
 </navigation>
