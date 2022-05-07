@@ -30,6 +30,7 @@ class GuestWomanWorkout : AppCompatActivity() {
         binding = GuestWomanWorkoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
 //        userRecyclerView = findViewById(R.id.woman_RV)
 //        userRecyclerView.layoutManager = LinearLayoutManager(this)
 //        userRecyclerView.setHasFixedSize(true)
@@ -45,7 +46,7 @@ class GuestWomanWorkout : AppCompatActivity() {
     }
 
 //    private fun getYouTubeData() {
-//        val ytView = findViewById<YouTubePlayerView>(R.id.yt_view)
+//        val ytView = findViewById<YouTubePlayerView>(R.id.cardio_yt_player)
 //        ytView.initialize(R.string.api_key_.toString(), object:YouTubePlayer.OnInitializedListener{
 //            override fun onInitializationSuccess(
 //                provider: YouTubePlayer.Provider?,

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,10 +15,13 @@ import com.example.silasera.adapters.GuestWorkoutAdapter
 import com.example.silasera.adapters.UserAdapter
 import com.example.silasera.dataclass.GuestWorkout
 import com.example.silasera.dataclass.User
+import com.google.android.youtube.player.YouTubeBaseActivity
+import com.google.android.youtube.player.YouTubePlayer
+import com.google.android.youtube.player.YouTubePlayerFragment
 import com.google.firebase.database.*
 
 
-class WomanWorkoutPlans : Fragment() {
+class WomanWorkoutPlans : Fragment(), YouTubePlayer.Provider {
 
     private lateinit var dbReference: DatabaseReference
     private lateinit var userRecyclerView: RecyclerView
@@ -30,6 +34,8 @@ class WomanWorkoutPlans : Fragment() {
         // Inflate the layout for this fragment
         val wMP = inflater.inflate(R.layout.woman_workout_plans, container, false)
 
+
+
         userRecyclerView = wMP.findViewById(R.id.woman_RV)
         userRecyclerView.layoutManager = LinearLayoutManager(context)
         userRecyclerView.setHasFixedSize(true)
@@ -39,6 +45,7 @@ class WomanWorkoutPlans : Fragment() {
 
         return wMP
     }
+
 
     private fun getUserData() {
         dbReference = FirebaseDatabase.getInstance().getReference("GuestWW")
@@ -93,6 +100,10 @@ class WomanWorkoutPlans : Fragment() {
             }
 
         })
+    }
+
+    override fun initialize(p0: String?, p1: YouTubePlayer.OnInitializedListener?) {
+        TODO("Not yet implemented")
     }
 
 }

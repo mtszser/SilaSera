@@ -27,20 +27,36 @@
         android:id="@+id/womanWorkoutUpper"
         android:name="com.example.silasera.womanWorkout.WomanWorkoutUpper"
         android:label="woman_workout_upper"
-        tools:layout="@layout/woman_workout_upper" />
+        tools:layout="@layout/woman_workout_upper" >
+        <action
+            android:id="@+id/action_womanWorkoutUpper_to_womanWorkoutPlans"
+            app:destination="@id/womanWorkoutPlans" />
+    </fragment>
     <fragment
         android:id="@+id/womanWorkoutCardio"
         android:name="com.example.silasera.womanWorkout.WomanWorkoutCardio"
         android:label="woman_workout_cardio"
-        tools:layout="@layout/woman_workout_cardio" />
+        tools:layout="@layout/woman_workout_cardio" >
+        <action
+            android:id="@+id/action_womanWorkoutCardio_to_womanWorkoutPlans"
+            app:destination="@id/womanWorkoutPlans" />
+    </fragment>
     <fragment
         android:id="@+id/womanWorkoutLower"
         android:name="com.example.silasera.womanWorkout.WomanWorkoutLower"
         android:label="woman_workout_lower"
-        tools:layout="@layout/woman_workout_lower" />
+        tools:layout="@layout/woman_workout_lower" >
+        <action
+            android:id="@+id/action_womanWorkoutLower_to_womanWorkoutPlans"
+            app:destination="@id/womanWorkoutPlans" />
+    </fragment>
     <fragment
         android:id="@+id/womanWorkoutFbw"
         android:name="com.example.silasera.womanWorkout.WomanWorkoutFbw"
         android:label="woman_workout_fbw"
-        tools:layout="@layout/woman_workout_fbw" />
+        tools:layout="@layout/woman_workout_fbw" >
+        <action
+            android:id="@+id/action_womanWorkoutFbw_to_womanWorkoutPlans"
+            app:destination="@id/womanWorkoutPlans" />
+    </fragment>
 </navigation>

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.silasera.R
+import com.google.android.youtube.player.YouTubeBaseActivity
 
 
 class WomanWorkoutCardio : Fragment() {
@@ -15,6 +16,8 @@ class WomanWorkoutCardio : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.woman_workout_cardio, container, false)
+        val wwC = inflater.inflate(R.layout.woman_workout_cardio, container, false)
+
+        return wwC
     }
 }
