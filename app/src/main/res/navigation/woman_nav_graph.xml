@@ -9,7 +9,7 @@
         android:id="@+id/womanWorkoutPlans"
         android:name="com.example.silasera.womanWorkout.WomanWorkoutPlans"
         android:label="woman_workout_plans"
-        tools:layout="@layout/woman_workout_plans" >
+        tools:layout="@layout/woman_workout_plans">
         <action
             android:id="@+id/action_womanWorkoutPlans_to_womanWorkoutUpper"
             app:destination="@id/womanWorkoutUpper" />
@@ -22,6 +22,7 @@
         <action
             android:id="@+id/action_womanWorkoutPlans_to_womanWorkoutFbw"
             app:destination="@id/womanWorkoutFbw" />
+
     </fragment>
     <fragment
         android:id="@+id/womanWorkoutUpper"

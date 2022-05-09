@@ -19,6 +19,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/upper_bar_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -28,19 +29,10 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Zacznijmy od planu treningowego"
+                    android:text="Dla Kobiet"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="23sp">
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Wybierz ten, który najbardziej Cię interesuje."
-                    android:textColor="@color/black"
-                    android:textSize="15sp">
+                    android:textSize="32sp">
                 </TextView>
 
             </LinearLayout>
@@ -53,7 +45,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.fragment.app.FragmentContainerView
+        <fragment
             android:id="@+id/nav_host_fragment_womanWorkout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -61,13 +53,7 @@
             app:defaultNavHost="true"
             app:navGraph="@navigation/woman_nav_graph">
 
-<!--            <com.google.android.youtube.player.YouTubePlayerView-->
-<!--                android:id="@+id/yt_view"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content">-->
-<!--            </com.google.android.youtube.player.YouTubePlayerView>-->
-
-        </androidx.fragment.app.FragmentContainerView>
+        </fragment>
 
     </FrameLayout>
 

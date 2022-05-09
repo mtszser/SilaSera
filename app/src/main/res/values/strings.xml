@@ -11,6 +11,7 @@
         diety i ćwiczeń. Po więcej informacji zapraszam do zakładki CPM</string>
     <string name="obeseweight">Co wskazuje na otyłość. Najlepszym sposobem by schudnąć, jest kombinacja odpowiedniej
         diety i ćwiczeń. Być może potrzebujesz też opini lekarza.</string>
+    // url from google cloud storage after setting it to public
     <string name="media_url_mp4">https://storage.googleapis.com/silasera-f7482.appspot.com/18.03.2020%20205kgx4(1).mp4</string>
 
     <string-array name="sex">
