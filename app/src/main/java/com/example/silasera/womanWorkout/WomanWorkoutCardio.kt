@@ -1,11 +1,20 @@
 package com.example.silasera.womanWorkout
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.example.silasera.R
+import com.example.silasera.activities.GuestWomanWorkout
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
@@ -16,6 +25,8 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
 
     private lateinit var exoPlayer: ExoPlayer
     private lateinit var exoView: StyledPlayerView
+    private lateinit var navController: NavController
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,11 +37,15 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
         exoView = wwC.findViewById(R.id.cardio_player_view)
         setUpPlayer(exoView)
 
-
-
+        val button = wwC.findViewById<Button>(R.id.backButton)
+        button.setOnClickListener{
+            view?.let { it1 -> Navigation.findNavController(it1).navigate(R.id.action_womanWorkoutCardio_to_womanWorkoutPlans) }
+        }
         return wwC
 
     }
+
+
 
     private fun setUpPlayer(exoView: StyledPlayerView) {
         exoPlayer = ExoPlayer.Builder(this.requireContext()).build()
@@ -47,3 +62,4 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
     }
 
 }
+

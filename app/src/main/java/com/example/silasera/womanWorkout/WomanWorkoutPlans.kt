@@ -8,9 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.NavController
+import androidx.navigation.NavHost
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.silasera.R
+import com.example.silasera.activities.GuestWomanWorkout
 import com.example.silasera.adapters.GuestWorkoutAdapter
 import com.example.silasera.adapters.UserAdapter
 import com.example.silasera.dataclass.GuestWorkout
@@ -34,14 +39,16 @@ class WomanWorkoutPlans : Fragment(), YouTubePlayer.Provider {
         // Inflate the layout for this fragment
         val wMP = inflater.inflate(R.layout.woman_workout_plans, container, false)
 
-
-
         userRecyclerView = wMP.findViewById(R.id.woman_RV)
         userRecyclerView.layoutManager = LinearLayoutManager(context)
         userRecyclerView.setHasFixedSize(true)
 
         guestWorkoutList = arrayListOf()
         getUserData()
+
+
+
+
 
         return wMP
     }
@@ -67,28 +74,32 @@ class WomanWorkoutPlans : Fragment(), YouTubePlayer.Provider {
                     userRecyclerView.adapter = GuestWorkoutAdapter(guestWorkoutList){
                         when(it.wname){
                             "Cardio" -> {
-                                val cardioFragment = WomanWorkoutCardio()
-                                val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-                                transaction.replace(R.id.nav_host_fragment_womanWorkout, cardioFragment)
-                                transaction.commit()
+                                view?.let { it1 -> Navigation.findNavController(it1).navigate(R.id.action_womanWorkoutPlans_to_womanWorkoutCardio) }
+//                                val cardioFragment = WomanWorkoutCardio()
+//                                val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+//                                transaction.replace(R.id.nav_host_fragment_womanWorkout, cardioFragment, "CARDIO")
+//                                transaction.commit()
                             }
                             "FBW" -> {
-                                val fbwFragment = WomanWorkoutFbw()
-                                val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-                                transaction.replace(R.id.nav_host_fragment_womanWorkout, fbwFragment)
-                                transaction.commit()
+                                view?.let { it1 -> Navigation.findNavController(it1).navigate(R.id.action_womanWorkoutPlans_to_womanWorkoutFbw) }
+//                                val fbwFragment = WomanWorkoutFbw()
+//                                val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+//                                transaction.replace(R.id.nav_host_fragment_womanWorkout, fbwFragment, "FBW")
+//                                transaction.commit()
                             }
                             "Lower" -> {
-                                val lowerFragment = WomanWorkoutLower()
-                                val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-                                transaction.replace(R.id.nav_host_fragment_womanWorkout, lowerFragment)
-                                transaction.commit()
+                                view?.let { it1 -> Navigation.findNavController(it1).navigate(R.id.action_womanWorkoutPlans_to_womanWorkoutLower) }
+//                                val lowerFragment = WomanWorkoutLower()
+//                                val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+//                                transaction.replace(R.id.nav_host_fragment_womanWorkout, lowerFragment, "LOWER")
+//                                transaction.commit()
                             }
                             "Upper" -> {
-                                val upperFragment = WomanWorkoutUpper()
-                                val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-                                transaction.replace(R.id.nav_host_fragment_womanWorkout, upperFragment)
-                                transaction.commit()
+                                view?.let { it1 -> Navigation.findNavController(it1).navigate(R.id.action_womanWorkoutPlans_to_womanWorkoutUpper) }
+//                                val upperFragment = WomanWorkoutUpper()
+//                                val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+//                                transaction.replace(R.id.nav_host_fragment_womanWorkout, upperFragment, "UPPER")
+//                                transaction.commit()
                             }
                         }
                     }
