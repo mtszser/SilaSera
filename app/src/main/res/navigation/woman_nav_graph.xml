@@ -39,7 +39,8 @@
         tools:layout="@layout/woman_workout_upper" >
         <action
             android:id="@+id/action_womanWorkoutUpper_to_womanWorkoutPlans"
-            app:destination="@id/womanWorkoutPlans" />
+            app:destination="@id/womanWorkoutPlans"
+            app:popUpTo="@id/womanWorkoutPlans" />
     </fragment>
     <fragment
         android:id="@+id/womanWorkoutCardio"
@@ -48,7 +49,8 @@
         tools:layout="@layout/woman_workout_cardio" >
         <action
             android:id="@+id/action_womanWorkoutCardio_to_womanWorkoutPlans"
-            app:destination="@id/womanWorkoutPlans" />
+            app:destination="@id/womanWorkoutPlans"
+            app:popUpTo="@id/womanWorkoutPlans" />
     </fragment>
     <fragment
         android:id="@+id/womanWorkoutLower"
@@ -57,15 +59,18 @@
         tools:layout="@layout/woman_workout_lower" >
         <action
             android:id="@+id/action_womanWorkoutLower_to_womanWorkoutPlans"
+            app:popUpTo="@id/womanWorkoutPlans"
             app:destination="@id/womanWorkoutPlans" />
     </fragment>
     <fragment
         android:id="@+id/womanWorkoutFbw"
         android:name="com.example.silasera.womanWorkout.WomanWorkoutFbw"
         android:label="woman_workout_fbw"
+        app:popUpTo="@id/womanWorkoutPlans"
         tools:layout="@layout/woman_workout_fbw" >
         <action
             android:id="@+id/action_womanWorkoutFbw_to_womanWorkoutPlans"
+            app:popUpTo="@id/womanWorkoutPlans"
             app:destination="@id/womanWorkoutPlans" />
     </fragment>
 </navigation>

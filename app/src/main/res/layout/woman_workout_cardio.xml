@@ -14,8 +14,8 @@
         android:gravity="center">
         <com.google.android.exoplayer2.ui.StyledPlayerView
             android:id="@+id/cardio_player_view"
-            android:layout_width="match_parent"
-            android:layout_height="500dp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
         </com.google.android.exoplayer2.ui.StyledPlayerView>
 
