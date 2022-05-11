@@ -30,14 +30,15 @@ class GuestWomanWorkout : AppCompatActivity() {
         binding = GuestWomanWorkoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
+        binding.gwmBackArrow.setOnClickListener{
+            finish()
+        }
 
 //        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_womanWorkout) as NavHostFragment
 //        navController = navHostFragment.navController
+            }
+
+    override fun onBackPressed() {
 
     }
-
-
-
 }
