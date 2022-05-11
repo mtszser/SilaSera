@@ -36,6 +36,9 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
         setUpButtons(wwC)
 
 
+
+
+
         if (savedInstanceState != null){
             savedInstanceState.getInt("mediaItem").let { restoreMedia ->
                 val seekTime = savedInstanceState.getLong("SeekTime")
@@ -65,6 +68,7 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
             exoPlayer.play()
             exoView.hideController()
         }
+
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -89,6 +93,8 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
         exoPlayer.addMediaItem(mediaItem)
         exoPlayer.prepare()
     }
+
+
 
 
 

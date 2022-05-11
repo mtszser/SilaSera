@@ -25,6 +25,8 @@ class WomanWorkoutUpper : Fragment(), Player.Listener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        
         // Inflate the layout for this fragment
         val wwU = inflater.inflate(R.layout.woman_workout_upper, container, false)
         exoView = wwU.findViewById(R.id.upper_player_view)
@@ -33,6 +35,7 @@ class WomanWorkoutUpper : Fragment(), Player.Listener {
         val button = wwU.findViewById<Button>(R.id.upper_back_button)
         button.setOnClickListener{
             view?.let { it1 -> Navigation.findNavController(it1).navigate(R.id.action_womanWorkoutUpper_to_womanWorkoutPlans) }
+
         }
         return wwU
 

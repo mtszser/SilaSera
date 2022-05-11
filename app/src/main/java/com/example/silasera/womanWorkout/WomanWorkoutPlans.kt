@@ -26,7 +26,7 @@ import com.google.android.youtube.player.YouTubePlayerFragment
 import com.google.firebase.database.*
 
 
-class WomanWorkoutPlans : Fragment(), YouTubePlayer.Provider {
+class WomanWorkoutPlans : Fragment() {
 
     private lateinit var dbReference: DatabaseReference
     private lateinit var userRecyclerView: RecyclerView
@@ -45,9 +45,6 @@ class WomanWorkoutPlans : Fragment(), YouTubePlayer.Provider {
 
         guestWorkoutList = arrayListOf()
         getUserData()
-
-
-
 
 
         return wMP
@@ -111,10 +108,6 @@ class WomanWorkoutPlans : Fragment(), YouTubePlayer.Provider {
             }
 
         })
-    }
-
-    override fun initialize(p0: String?, p1: YouTubePlayer.OnInitializedListener?) {
-        TODO("Not yet implemented")
     }
 
 }

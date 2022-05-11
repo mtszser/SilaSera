@@ -36,6 +36,8 @@ class WomanWorkoutFbw : Fragment(), Player.Listener {
         return wwFbw
     }
 
+    
+
     private fun setUpPlayer(exoView: StyledPlayerView) {
         exoPlayer = ExoPlayer.Builder(this.requireContext()).build()
         exoView.player = exoPlayer
