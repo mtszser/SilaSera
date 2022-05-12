@@ -18,6 +18,15 @@
             android:layout_height="wrap_content">
 
         </com.google.android.exoplayer2.ui.StyledPlayerView>
+        
+        <ProgressBar
+            android:id="@+id/cardio_progress_bar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:visibility="invisible">
+
+        </ProgressBar>
 
         <LinearLayout
             android:layout_width="match_parent"
