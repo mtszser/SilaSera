@@ -13,6 +13,10 @@
         diety i ćwiczeń. Być może potrzebujesz też opini lekarza.</string>
     // url from google cloud storage after setting it to public
     <string name="media_url_mp4">https://storage.googleapis.com/silasera-f7482.appspot.com/ci%C4%85g245_1.mp4</string>
+    <string name="ciag1">https://storage.googleapis.com/silasera-f7482.appspot.com/ci%C4%85g245_1.mp4</string>
+    <string name="vid2">https://storage.googleapis.com/silasera-f7482.appspot.com/18.03.2020%20205kgx4(4).mp4</string>
+    <string name="vid3">https://storage.googleapis.com/silasera-f7482.appspot.com/18.03.2020%20205kgx4(3).mp4</string>
+    <string name="vid4">https://storage.googleapis.com/silasera-f7482.appspot.com/18.03.2020%20205kgx4(2).mp4</string>
 
     <string-array name="sex">
         <item>Male</item>
@@ -30,7 +34,8 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="cofnij">Cofnij</string>
+    <string name="wroc">Wróć</string>
     <string name="stop">Stop</string>
     <string name="start">Start</string>
+    <string name="reset">Reset</string>
 </resources>
