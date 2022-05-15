@@ -12,6 +12,7 @@ import android.widget.Button
 import android.widget.Chronometer
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.navigation.Navigation
 import com.example.silasera.R
 import com.example.silasera.dataclass.FreePlaylist
@@ -35,8 +36,9 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
     private lateinit var countDownBar: CircularProgressBar
     private lateinit var progressBar: ProgressBar
     private lateinit var countDown: TextView
+    private lateinit var exName: TextView
     private var isStop = false
-
+    private lateinit var cardioList: ArrayList<FreePlaylist>
     private lateinit var cardioPlayList: ArrayList<MediaItem>
 
 
@@ -45,11 +47,17 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        cardioList = ArrayList()
         cardioPlayList = ArrayList()
         cardioPlayList.add(MediaItem.fromUri("https://storage.googleapis.com/silasera-f7482.appspot.com/ci%C4%85g245_1.mp4"))
-        cardioPlayList.add(MediaItem.fromUri("https://storage.googleapis.com/silasera-f7482.appspot.com/18.03.2020%20205kgx4(4).mp4"))
-        cardioPlayList.add(MediaItem.fromUri("https://storage.googleapis.com/silasera-f7482.appspot.com/18.03.2020%20205kgx4(3).mp4"))
-        cardioPlayList.add(MediaItem.fromUri("https://storage.googleapis.com/silasera-f7482.appspot.com/18.03.2020%20205kgx4(2).mp4"))
+        cardioPlayList.add(MediaItem.fromUri("https://storage.googleapis.com/silasera-f7482.appspot.com/ci%C4%85g245_1.mp4"))
+        cardioPlayList.add(MediaItem.fromUri("https://storage.googleapis.com/silasera-f7482.appspot.com/ci%C4%85g245_1.mp4"))
+        cardioPlayList.add(MediaItem.fromUri("https://storage.googleapis.com/silasera-f7482.appspot.com/ci%C4%85g245_1.mp4"))
+        cardioList.add(FreePlaylist("Deadlift1", cardioPlayList[0]))
+        cardioList.add(FreePlaylist("Deadlift2", cardioPlayList[1]))
+        cardioList.add(FreePlaylist("Deadlift3", cardioPlayList[2]))
+        cardioList.add(FreePlaylist("Deadlift4", cardioPlayList[3]))
+
 
         val wwC = inflater.inflate(R.layout.woman_workout_cardio, container, false)
         exoView = wwC.findViewById(R.id.cardio_player_view)
@@ -76,11 +84,13 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
 
     private fun setUpItems(wwC: View) {
 
+        exName = wwC.findViewById(R.id.cardio_ex_name)
+        exName.text = cardioList[0].videoName
         countDownBar = wwC.findViewById(R.id.cardio_countdown_bar)
         countDown = wwC.findViewById(R.id.cardio_countdown)
         backButton = wwC.findViewById(R.id.cardio_back_button)
         backButton.setOnClickListener{
-            exoPlayer.pause()
+            exoPlayer.stop()
             view?.let { it1 -> Navigation.findNavController(it1).navigate(R.id.action_womanWorkoutCardio_to_womanWorkoutPlans) }
         }
         stopButton = wwC.findViewById(R.id.cardio_stop_button)
@@ -92,9 +102,10 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
         }
         playButton = wwC.findViewById(R.id.cardio_start_button)
         playButton.setOnClickListener {
-            exoPlayer.play()
-            exoView.hideController()
-            setCountDown(countDown, countDownBar)
+                exoPlayer.play()
+                exoView.hideController()
+                setCountDown(countDown, countDownBar)
+                isStop = false
         }
 
         }
@@ -121,8 +132,18 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
             }
 
             override fun onFinish() {
-                countDown?.text = "Koniec!"
+                countDown?.text = "15"
+                countDownBar.progress = progress.toFloat()
+                exoPlayer.seekToNextMediaItem()
+                isStop = true
                 exoPlayer.pause()
+                when (exoPlayer.currentMediaItemIndex) {
+                    0 -> exName.text = cardioList[0].videoName
+                    1 -> exName.text = cardioList[1].videoName
+                    2 -> exName.text = cardioList[2].videoName
+                    3 -> exName.text = cardioList[3].videoName
+                }
+
             }
 
         }.start()
@@ -148,7 +169,7 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
 
     private fun addMp4Files(exoPlayer: ExoPlayer) {
         for (i in cardioPlayList.indices) {
-            exoPlayer.addMediaItem(cardioPlayList[i])
+            exoPlayer.addMediaItem(cardioList[i].videoUrl)
         }
         exoPlayer.prepare()
     }
@@ -166,6 +187,11 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
                 progressBar.visibility = View.GONE
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        exoPlayer.playWhenReady
     }
 
 
