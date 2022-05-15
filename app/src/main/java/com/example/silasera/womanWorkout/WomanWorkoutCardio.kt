@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.Chronometer
 import android.widget.ProgressBar
@@ -38,6 +39,7 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
     private lateinit var countDown: TextView
     private lateinit var exName: TextView
     private var isStop = false
+    private var isNext = false
     private lateinit var cardioList: ArrayList<FreePlaylist>
     private lateinit var cardioPlayList: ArrayList<MediaItem>
 
@@ -112,41 +114,48 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
 
     private fun setCountDown(countDown: TextView?, countDownBar: CircularProgressBar) {
 
-        object : CountDownTimer(15000, 1000) {
-            var progress = 0
-            override fun onTick(millisUntilFinished: Long) {
+            object : CountDownTimer(15000, 1000) {
+                var progress = 0
+                override fun onTick(millisUntilFinished: Long) {
 
-                var totalTime = 15000/1000
-                var timeLeft = millisUntilFinished/1000
+                    var totalTime = 15000 / 1000
+                    var timeLeft = millisUntilFinished / 1000
 
-                progress = (timeLeft*100/totalTime).toInt()
-                countDownBar.progress = progress.toFloat()
+                    progress = (timeLeft * 100 / totalTime).toInt()
+                    countDownBar.progress = progress.toFloat()
+                    startAnimation()
 
 
 
-                countDown?.text = "" + millisUntilFinished/1000
-                if (isStop) {
-                   cancel()
+                    countDown?.text = "" + millisUntilFinished / 1000
+                    if (isStop) {
+                        cancel()
+                    }
+
                 }
 
-            }
+                override fun onFinish() {
+                    countDown?.text = "15"
+                    countDownBar.progress = progress.toFloat()
+                    exoPlayer.seekToNextMediaItem()
+                    isStop = true
+                    exoPlayer.pause()
+                    when (exoPlayer.currentMediaItemIndex) {
+                        0 -> exName.text = cardioList[0].videoName
+                        1 -> exName.text = cardioList[1].videoName
+                        2 -> exName.text = cardioList[2].videoName
+                        3 -> exName.text = cardioList[3].videoName
+                    }
+                    isNext = true
 
-            override fun onFinish() {
-                countDown?.text = "15"
-                countDownBar.progress = progress.toFloat()
-                exoPlayer.seekToNextMediaItem()
-                isStop = true
-                exoPlayer.pause()
-                when (exoPlayer.currentMediaItemIndex) {
-                    0 -> exName.text = cardioList[0].videoName
-                    1 -> exName.text = cardioList[1].videoName
-                    2 -> exName.text = cardioList[2].videoName
-                    3 -> exName.text = cardioList[3].videoName
                 }
 
-            }
+            }.start()
+        }
 
-        }.start()
+    private fun startAnimation() {
+        val animation = AnimationUtils.loadAnimation(context, R.anim.pulse_text)
+        countDown.startAnimation(animation)
     }
 
 
