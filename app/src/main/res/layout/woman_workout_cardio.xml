@@ -60,6 +60,10 @@
 
                 </TextView>
 
+
+
+
+
                 <com.mikhaellopez.circularprogressbar.CircularProgressBar
                     android:id="@+id/cardio_countdown_bar"
                     android:layout_width="160dp"
@@ -71,6 +75,7 @@
 
                 </com.mikhaellopez.circularprogressbar.CircularProgressBar>
             </RelativeLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
