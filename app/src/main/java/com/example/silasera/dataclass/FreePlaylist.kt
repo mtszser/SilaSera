@@ -1,3 +1,5 @@
 package com.example.silasera.dataclass
 
-data class FreePlaylist(var videoName: String?, var videoUrl: String?)
+import com.google.android.exoplayer2.MediaItem
+
+data class FreePlaylist(var videoName: String?, var videoUrl: MediaItem)
