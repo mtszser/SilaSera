@@ -39,7 +39,7 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
     private lateinit var countDown: TextView
     private lateinit var exName: TextView
     private var isStop = false
-    private var isNext = false
+    private var isResume = false
     private lateinit var cardioList: ArrayList<FreePlaylist>
     private lateinit var cardioPlayList: ArrayList<MediaItem>
 
@@ -104,10 +104,29 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
         }
         playButton = wwC.findViewById(R.id.cardio_start_button)
         playButton.setOnClickListener {
+            if(isResume){
+                object : CountDownTimer(4000, 1000) {
+                    override fun onTick(millisUntilFinished: Long) {
+                        var startingSoon = millisUntilFinished / 1000
+                        startAnimation()
+                       countDown?.text = "" + startingSoon
+
+                    }
+
+                    override fun onFinish() {
+                        exoPlayer.play()
+                        exoView.hideController()
+                        setCountDown(countDown, countDownBar)
+                        isStop = false
+                    }
+
+                }.start()
+            } else {
                 exoPlayer.play()
                 exoView.hideController()
                 setCountDown(countDown, countDownBar)
                 isStop = false
+            }
         }
 
         }
@@ -123,13 +142,12 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
 
                     progress = (timeLeft * 100 / totalTime).toInt()
                     countDownBar.progress = progress.toFloat()
-                    startAnimation()
 
 
-
-                    countDown?.text = "" + millisUntilFinished / 1000
+                    countDown?.text = "" + timeLeft
                     if (isStop) {
                         cancel()
+                        isResume = true
                     }
 
                 }
@@ -138,7 +156,6 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
                     countDown?.text = "15"
                     countDownBar.progress = progress.toFloat()
                     exoPlayer.seekToNextMediaItem()
-                    isStop = true
                     exoPlayer.pause()
                     when (exoPlayer.currentMediaItemIndex) {
                         0 -> exName.text = cardioList[0].videoName
@@ -146,12 +163,13 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
                         2 -> exName.text = cardioList[2].videoName
                         3 -> exName.text = cardioList[3].videoName
                     }
-                    isNext = true
 
                 }
 
             }.start()
         }
+
+
 
     private fun startAnimation() {
         val animation = AnimationUtils.loadAnimation(context, R.anim.pulse_text)
@@ -169,19 +187,30 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
 
     private fun setUpPlayer(exoView: StyledPlayerView) {
         exoPlayer = ExoPlayer.Builder(this.requireContext()).build()
+        exoPlayer.repeatMode = Player.REPEAT_MODE_ONE
         exoView.player = exoPlayer
         exoPlayer.addListener(this)
         addMp4Files(exoPlayer)
+        addMp3Files(exoPlayer)
         exoView.useController = false
+    }
+
+    private fun addMp3Files(exoPlayer: ExoPlayer) {
+        val doggy = MediaItem.fromUri("https://storage.googleapis.com/silasera-f7482.appspot.com/Nagranie.m4a")
+        exoPlayer.addMediaItem(5, doggy)
+        exoPlayer.prepare()
     }
 
 
     private fun addMp4Files(exoPlayer: ExoPlayer) {
-        for (i in cardioPlayList.indices) {
-            exoPlayer.addMediaItem(cardioList[i].videoUrl)
-        }
+//        for (i in cardioPlayList.indices) {
+//            exoPlayer.addMediaItem(cardioList[i].videoUrl)
+//        }
+        exoPlayer.addMediaItems(cardioPlayList)
         exoPlayer.prepare()
     }
+
+
 
     override fun onPlaybackStateChanged(playbackState: Int) {
         super.onPlaybackStateChanged(playbackState)
@@ -195,6 +224,7 @@ class WomanWorkoutCardio : Fragment(), Player.Listener {
                 exoView.visibility = View.VISIBLE
                 progressBar.visibility = View.GONE
             }
+            Player.STATE_ENDED -> Player.REPEAT_MODE_ONE
         }
     }
 
