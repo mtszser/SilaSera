@@ -24,7 +24,46 @@
         android:text="123456789"
         android:textSize="20sp"
         android:textColor="@color/black">
+    </TextView>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hej Mati to Twoje dane?"
+        android:textSize="30sp"
+        android:textColor="@color/black">
+    </TextView>
+    <TextView
+        android:id="@+id/ser_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="name"
+        android:textSize="25sp"
+        android:textColor="@color/black">
+    </TextView>
+    <TextView
+        android:id="@+id/ser_lastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="name"
+        android:textSize="25sp"
+        android:textColor="@color/black">
+    </TextView>
+    <TextView
+        android:id="@+id/ser_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="name"
+        android:textSize="25sp"
+        android:textColor="@color/black">
+    </TextView>
+    <TextView
+        android:id="@+id/ser_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="name"
+        android:textSize="25sp"
+        android:textColor="@color/black">
     </TextView>
 
 </LinearLayout>
