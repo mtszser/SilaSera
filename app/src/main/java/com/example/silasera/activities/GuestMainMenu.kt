@@ -31,7 +31,7 @@ class GuestMainMenu : AppCompatActivity() {
     }
 
     private fun getUserInfo() {
-        val intent = getIntent()
+        val intent = intent
         val gFirstName = intent.getStringExtra("gFirstName")
         val nEditText = findViewById<EditText>(R.id.greetingGuestText2)
         nEditText.setText(gFirstName)
