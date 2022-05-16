@@ -68,9 +68,11 @@ class MainActivity : AppCompatActivity()  {
                     if (it.isSuccessful) {
 
                         val welcome = email.substringBefore("@")
+                        val uidUser = firebaseAuth.uid
 
                         Toast.makeText(this, "Welcome $welcome", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this, GuestMainMenu::class.java)
+                        val intent = Intent(this, AppMainActivity::class.java)
+                        intent.putExtra("uid", uidUser)
                         startActivity(intent)
 
                     } else {
