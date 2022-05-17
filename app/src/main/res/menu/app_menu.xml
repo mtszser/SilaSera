@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="nav_view">
+    <group android:checkableBehavior="single">
+    <item android:title="Konto">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/app_nav_edit_profile"
+                android:icon="@drawable/ic_baseline_edit_24"
+                android:title="Edytuj profil" />
+            <item
+                android:id="@+id/app_nav_raport"
+                android:icon="@drawable/raport"
+                android:title="Wyślij raport" />
+            </group>
+        </menu>
+    </item>
+
+
+    <item android:title="Trening">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/app_nav_workout"
+                android:icon="@drawable/myworkout"
+                android:title="Mój Trening" />
+            <item
+                android:id="@+id/app_nav_my_diet"
+                android:icon="@drawable/diet"
+                android:title="Moja Dieta" />
+            <item
+                android:id="@+id/app_nav_measurement"
+                android:icon="@drawable/tape"
+                android:title="Pomiary ciała" />
+            </group>
+        </menu>
+    </item>
+            <item android:title="Kalkulatory">
+                <menu>
+                    <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/app_nav_calc_bmi"
+                        android:icon="@drawable/bmi"
+                        android:title="BMI"/>
+                    <item
+                        android:id="@+id/app_nav_calc_cpm"
+                        android:icon="@drawable/kcal"
+                        android:title="CPM"/>
+                    <item
+                        android:id="@+id/app_nav_calc_water"
+                        android:icon="@drawable/drop"
+                        android:title="WODA"/>
+                    <item
+                        android:id="@+id/app_nav_calc_1rm"
+                        android:icon="@drawable/onerm"
+                        android:title="1CM"/>
+                    </group>
+                </menu>
+            </item>
+    <item android:title="Aplikacja">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/app_nav_settings"
+                android:icon="@drawable/ic_baseline_settings_24"
+                android:title="Ustawienia" />
+            <item
+                android:id="@+id/app_nav_logout"
+                android:icon="@drawable/ic_baseline_logout_24"
+                android:title="Wyloguj" />
+            </group>
+        </menu>
+    </item>
+    </group>
+</menu>
