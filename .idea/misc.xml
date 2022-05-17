@@ -12,6 +12,7 @@
         <entry key="..\:/SilaSera/app/src/main/res/drawable/cheese_rectangle.xml" value="0.2205" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/content_background.xml" value="0.176" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/content_container.xml" value="0.176" />
+        <entry key="..\:/SilaSera/app/src/main/res/drawable/drawer_list.xml" value="0.229" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/ed_border.xml" value="0.352" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/focus_textcolor.xml" value="0.3828125" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/guest_bwp_color.xml" value="0.352" />
@@ -21,8 +22,13 @@
         <entry key="..\:/SilaSera/app/src/main/res/drawable/guest_top_bar.xml" value="0.3005" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/guest_top_corner_radius.xml" value="0.352" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/guestmain_ed_border.xml" value="0.352" />
+        <entry key="..\:/SilaSera/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.3675" />
+        <entry key="..\:/SilaSera/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.3675" />
+        <entry key="..\:/SilaSera/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.3675" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/ic_baseline_menu.xml" value="0.3828125" />
+        <entry key="..\:/SilaSera/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.3675" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/ic_baseline_search.xml" value="0.3828125" />
+        <entry key="..\:/SilaSera/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.3675" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/ic_icon_ball.xml" value="0.2833333333333333" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2833333333333333" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/left_arrow_24_selector.xml" value="0.2833333333333333" />
@@ -54,6 +60,18 @@
         <entry key="..\:/SilaSera/app/src/main/res/layout/activity_sign_up.xml" value="0.36093943139678614" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/activity_splash.xml" value="0.21" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/activity_test_card.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_edit_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_bmi.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_body.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_cpm.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_diet.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_rm.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_water.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_workout.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_nav_header.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_send_raport.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_settings.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/forgot_password.xml" value="0.2671875" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/fragment_bmi.xml" value="0.33" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/fragment_cpm.xml" value="0.36666666666666664" />
@@ -79,6 +97,7 @@
         <entry key="..\:/SilaSera/app/src/main/res/layout/woman_workout_lower.xml" value="0.2740036231884058" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/woman_workout_plans.xml" value="0.2740036231884058" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/woman_workout_upper.xml" value="0.2740036231884058" />
+        <entry key="..\:/SilaSera/app/src/main/res/menu/app_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/menu/guest_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/menu/nav_bottom_bar.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/menu/weight_bottom_navbar.xml" value="0.36666666666666664" />
