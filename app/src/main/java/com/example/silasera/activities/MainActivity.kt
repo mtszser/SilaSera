@@ -73,6 +73,7 @@ class MainActivity : AppCompatActivity()  {
                         Toast.makeText(this, "Welcome $welcome", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this, AppMainActivity::class.java)
                         intent.putExtra("uid", uidUser)
+                        intent.putExtra("profileEmail", email)
                         startActivity(intent)
 
                     } else {
