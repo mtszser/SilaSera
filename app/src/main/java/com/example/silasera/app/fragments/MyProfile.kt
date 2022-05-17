@@ -8,15 +8,13 @@ import android.view.ViewGroup
 import com.example.silasera.R
 
 
-class SendRaport : Fragment() {
-
+class MyProfile : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment.
-        return inflater.inflate(R.layout.app_send_raport, container, false)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.app_my_profile, container, false)
     }
-
 }
