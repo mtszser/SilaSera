@@ -7,6 +7,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.widget.AdapterView
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
@@ -29,6 +31,10 @@ class AppMainActivity : AppCompatActivity() {
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navView: NavigationView
+    private lateinit var profileAvatar: ImageView
+    private lateinit var profileName: TextView
+    private lateinit var profileLastName: TextView
+    private lateinit var profileEmail: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +43,9 @@ class AppMainActivity : AppCompatActivity() {
 
         drawerLayout = findViewById(R.id.app_drawer_layout)
         navView = findViewById(R.id.nav_view)
+        getUserUid()
+
+
 
 
 
@@ -68,7 +77,7 @@ class AppMainActivity : AppCompatActivity() {
             }
             true
         }
-//        getUserUid()
+
 //        userProfile = arrayListOf()
     }
 
@@ -97,33 +106,48 @@ class AppMainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-//    private fun getUserUid() {
-//        val userIntent = intent
-//        val userUid = userIntent.getStringExtra("uid")
-//        Log.i("useruid", "$userUid")
-//        binding.silaSeraProfileUid.text = userUid
-//        isInFirebase(userUid)
-//    }
-//
-//    private fun isInFirebase(userUid: String?) {
-//        dbReference = FirebaseDatabase.getInstance().getReference("userProfile")
-//        dbReference.child("111222333444555").get().addOnSuccessListener {
-//            Log.i("firebaseUser", "info: ${it.value}")
-//            val firstname = it.child("username").value.toString()
-//            val secondname = it.child("userlastname").value
-//            val height = it.child("height").value
-//            val weight = it.child("weight").value
-//            Log.i("name", "$firstname")
-//            binding.serName.text = firstname
-//            binding.serLastname.text = secondname.toString()
-//            binding.serHeight.text = height.toString()
-//            binding.serWeight.text = weight.toString()
-//
+    private fun getUserUid() {
+        val userIntent = intent
+        val userUid = userIntent.getStringExtra("uid")
+        val userEmail = userIntent.getStringExtra("profileEmail")
+        Log.i("userUid", "$userUid")
+        Log.i("userMail", "$userEmail")
+
+
+        isInFirebase(userUid, userEmail)
+    }
+
+    private fun isInFirebase(userUid: String?, userEmail: String?) {
+
+        dbReference = FirebaseDatabase.getInstance().getReference("userProfile")
+            .child("$userUid")
+        dbReference.child("username").get().addOnSuccessListener {
+            Log.i("There is a profile with:", "${it.value} username.")
+        }.addOnFailureListener{
+            Log.i("There is no profile with:", "username")
+        }
+//        dbReference.child("$userUid").get().addOnSuccessListener {
+//            Log.i("There is a profile with:", "${it.value} uid.")
 //        }.addOnFailureListener{
-//            Log.i("FirebaseUser", "user not Found $it")
-//        }
+//            Log.i("There is no profile with:", "THAT UID")
 //
-//    }
+//        }
+        dbReference.child("111222333444555").get().addOnSuccessListener {
+            Log.i("firebaseUser", "info: ${it.value}")
+            profileName = findViewById(R.id.app_username)
+            profileEmail = findViewById(R.id.app_mail)
+            val firstname = it.child("username").value.toString()
+            val secondname = it.child("userlastname").value.toString()
+            val height = it.child("height").value
+            val weight = it.child("weight").value
+            profileName.text = firstname + " " + secondname
+            profileEmail.text = userEmail
+            Log.i("name", "$firstname")
+        }.addOnFailureListener{
+            Log.i("FirebaseUser", "user not Found $it")
+        }
+
+    }
 
 
     override fun onBackPressed() {
