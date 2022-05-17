@@ -8,6 +8,7 @@
 
 
     <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/app_avatar"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:src="@drawable/profilowe"
