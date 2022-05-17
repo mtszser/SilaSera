@@ -113,6 +113,37 @@
         <item name="android:fragmentExitTransition">@transition/trans_anim</item>
     </style>
 
+    <style name="Theme.AppMain" parent="Theme.AppCompat.DayNight">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/cheeseYellow</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/darkBlue</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:navigationBarColor">@color/cheeseYellow</item>
+        <!-- Customize your theme here. -->
+
+        <!-- This is to enable transition. -->
+        <item name="android:windowActivityTransitions">true</item>
+
+        <!-- Setting up enter and exit transition. -->
+        <item name="android:windowEnterTransition">@transition/trans_anim</item>
+        <item name="android:fragmentExitTransition">@transition/trans_anim</item>
+    </style>
+
+    <style name="ThemeOverlay.AppCompat.navTheme">
+
+        <!-- Color of text and icon when SELECTED -->
+        <item name="colorPrimary">@color/black</item>
+
+        <!-- Background color when SELECTED -->
+        <item name="colorControlHighlight">#4D000000</item>
+
+    </style>
 
 
 </resources>
