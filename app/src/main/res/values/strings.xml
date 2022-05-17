@@ -17,6 +17,9 @@
     <string name="vid2">https://storage.googleapis.com/silasera-f7482.appspot.com/18.03.2020%20205kgx4(4).mp4</string>
     <string name="vid3">https://storage.googleapis.com/silasera-f7482.appspot.com/18.03.2020%20205kgx4(3).mp4</string>
     <string name="vid4">https://storage.googleapis.com/silasera-f7482.appspot.com/18.03.2020%20205kgx4(2).mp4</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
 
     <string-array name="sex">
         <item>Male</item>
