@@ -21,7 +21,9 @@
         android:theme="@style/Theme.SilaSera">
         <activity
             android:name=".activities.AppMainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Moje Konto"
+            android:theme="@style/Theme.AppMain"/>
         <activity
             android:name=".activities.WeightPlanner"
             android:exported="false"
