@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F5F5"
+    tools:context=".app.fragments.AccountInfo">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <include
+                layout="@layout/ai_item_avatar">
+            </include>
+
+            <Button
+                android:id="@+id/accountAI_save"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded"
+                android:text="ZAPISZ"
+                android:layout_marginTop="10dp">
+
+            </Button>
+            <!--            <TextView-->
+<!--                android:id="@+id/ep_user_uid"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:padding="10dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:text="User uid"-->
+<!--                android:textSize="30sp"-->
+<!--                android:textColor="@color/black">-->
+<!--            </TextView>-->
+<!--            <TextView-->
+<!--                android:id="@+id/ep_user_mail"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textStyle="bold"-->
+<!--                android:text="User E-mail"-->
+<!--                android:background="#E8E6E6"-->
+<!--                android:textSize="30sp"-->
+<!--                android:textColor="#3A3939">-->
+<!--            </TextView>-->
+        </LinearLayout>
+
+
+
+
+</FrameLayout>
