@@ -1,18 +1,19 @@
 package com.example.silasera.activities
 
 import android.content.Intent
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
-import android.widget.AdapterView
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.isInvisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.silasera.R
 import com.example.silasera.app.fragments.*
 import com.example.silasera.dataclass.GuestWorkout
@@ -27,7 +28,7 @@ class AppMainActivity : AppCompatActivity() {
 
     private lateinit var dbReference: DatabaseReference
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var userProfile: ArrayList<UserProfile>
+    private lateinit var userProfile: ArrayList<String>
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navView: NavigationView
@@ -44,8 +45,6 @@ class AppMainActivity : AppCompatActivity() {
         drawerLayout = findViewById(R.id.app_drawer_layout)
         navView = findViewById(R.id.nav_view)
         getUserUid()
-
-
 
 
 
@@ -78,7 +77,6 @@ class AppMainActivity : AppCompatActivity() {
             true
         }
 
-//        userProfile = arrayListOf()
     }
 
     private fun logout() {
@@ -119,37 +117,50 @@ class AppMainActivity : AppCompatActivity() {
 
     private fun isInFirebase(userUid: String?, userEmail: String?) {
 
-        dbReference = FirebaseDatabase.getInstance().getReference("userProfile")
-            .child("$userUid")
-        dbReference.child("username").get().addOnSuccessListener {
-            Log.i("There is a profile with:", "${it.value} username.")
-        }.addOnFailureListener{
-            Log.i("There is no profile with:", "username")
-        }
-//        dbReference.child("$userUid").get().addOnSuccessListener {
-//            Log.i("There is a profile with:", "${it.value} uid.")
-//        }.addOnFailureListener{
-//            Log.i("There is no profile with:", "THAT UID")
-//
-//        }
-        dbReference.child("111222333444555").get().addOnSuccessListener {
-            Log.i("firebaseUser", "info: ${it.value}")
-            profileName = findViewById(R.id.app_username)
-            profileEmail = findViewById(R.id.app_mail)
-            val firstname = it.child("username").value.toString()
-            val secondname = it.child("userlastname").value.toString()
-            val height = it.child("height").value
-            val weight = it.child("weight").value
-            profileName.text = firstname + " " + secondname
-            profileEmail.text = userEmail
-            Log.i("name", "$firstname")
-        }.addOnFailureListener{
-            Log.i("FirebaseUser", "user not Found $it")
-        }
+        dbReference = FirebaseDatabase.getInstance().getReference("UserProfile")
+        dbReference.child("$userUid").get().addOnSuccessListener {
+            if (it.value == null) {
+                getInformation(userUid, userEmail)
+            } else {
+                val name = it.child("userName").getValue(String::class.java)
+                val lastName = it.child("userLastname").getValue(String::class.java)
+                val email = it.child("userEmail").getValue(String::class.java)
+                profileName = findViewById(R.id.app_username)
+                profileEmail = findViewById(R.id.app_mail)
+                profileName.text = name + " " + lastName
+                profileEmail.text = email
+                val fragmentManager: FragmentManager = supportFragmentManager
+                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                val myFragment = MyProfile()
+                fragmentTransaction.replace(R.id.app_frame_layout, myFragment).commit()
+            }
 
+        }.addOnFailureListener{
+
+        }
     }
 
+
+    private fun getInformation(userUid: String?, userEmail: String?) {
+        Log.i("Success Listener", "$userUid")
+        Log.i("Success Listener", "$userEmail")
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+        val fragmentManager: FragmentManager = supportFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+        val myFragment = AccountInfo()
+        val bundle = Bundle()
+        title = "Nowe Konto"
+        bundle.putString("userUid", userUid)
+        bundle.putString("userEmail", userEmail)
+        myFragment.arguments = bundle
+        fragmentTransaction.add(R.id.app_frame_layout, myFragment).commit()
+
+
+
+    }
 
     override fun onBackPressed() {
     }
+
+
 }
