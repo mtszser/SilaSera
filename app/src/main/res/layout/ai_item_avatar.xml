@@ -89,34 +89,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:clickable="false"
-                    android:focusable="false"
-                    android:hint="Email"
-                    android:textColorHint="@color/black"
-                    android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    app:boxBackgroundMode="outline"
-                    app:boxStrokeColor="@color/yellowLoginDark"
-                    app:boxStrokeWidth="2dp"
-                    app:hintTextColor="@color/black"
-                    app:startIconDrawable="@drawable/ic_baseline_email_24"
-                    app:startIconTint="@color/black">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/accountAI_email"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:clickable="false"
-                        android:focusable="false"
-                        android:inputType="textEmailAddress"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
                     android:hint="Wzrost"
                     android:textColorHint="@color/black"
                     android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -133,6 +105,31 @@
                         android:layout_height="wrap_content"
                         android:focusable="true"
                         android:inputType="numberDecimal"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="Wiek"
+                    android:textColorHint="@color/black"
+                    android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="@color/yellowLoginDark"
+                    app:boxStrokeWidth="2dp"
+                    app:hintTextColor="@color/black"
+                    app:startIconDrawable="@drawable/ic_baseline_child_care_24"
+                    app:startIconTint="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/accountAI_age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="true"
+                        android:inputType="number"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
 
@@ -162,6 +159,42 @@
                         android:textSize="20sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/accountAI_mCheck"
+                            android:layout_width="match_parent"
+                            android:text="Mężczyzna"
+                            android:textSize="20sp"
+                            android:buttonTint="@color/yellowLoginDark"
+                            android:layout_height="wrap_content"/>
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/accountAI_wCheck"
+                            android:text="Kobieta"
+                            android:textSize="20sp"
+                            android:layout_width="match_parent"
+                            android:buttonTint="@color/yellowLoginDark"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"/>
+
+
+                </LinearLayout>
+
 
 
             </LinearLayout>
