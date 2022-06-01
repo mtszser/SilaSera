@@ -14,10 +14,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentManager
@@ -40,7 +37,10 @@ class AccountInfo : Fragment() {
     private lateinit var aiWeight: TextView
     private lateinit var aiHeight: TextView
     private lateinit var aiSaveButton: Button
-    private lateinit var aiEmail: TextView
+    private lateinit var aiEmail: String
+    private lateinit var aiAge: TextView
+    private lateinit var mCheck: CheckBox
+    private lateinit var wCheck: CheckBox
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -88,27 +88,43 @@ class AccountInfo : Fragment() {
 
     private fun onClickListeners(appAI: View?, profileEmail: String?, profileUid: String?) {
         aiSaveButton = appAI?.findViewById(R.id.accountAI_save)!!
-        aiName = appAI?.findViewById(R.id.accountAI_name)!!
+        mCheck = appAI.findViewById(R.id.accountAI_mCheck)
+        wCheck = appAI.findViewById(R.id.accountAI_wCheck)
+        aiName = appAI.findViewById(R.id.accountAI_name)
+        aiAge = appAI.findViewById(R.id.accountAI_age)
         aiLastname = appAI.findViewById(R.id.accountAI_lastname)
         aiWeight = appAI.findViewById(R.id.accountAI_weight)
         aiHeight = appAI.findViewById(R.id.accountAI_height)
         aiSaveButton = appAI.findViewById(R.id.accountAI_save)
-        aiEmail = appAI.findViewById(R.id.accountAI_email)
-        aiEmail.text = profileEmail
+        var gender = ""
+        mCheck.setOnClickListener{
+            if(mCheck.isChecked) {
+                gender = "M"
+                wCheck.isChecked = false
+            }
+        }
+        wCheck.setOnClickListener{
+            if(mCheck.isChecked) {
+                gender = "K"
+                mCheck.isChecked = false
+            }
+        }
 
         aiSaveButton.setOnClickListener {
-            val email = aiEmail.text.toString()
+            aiEmail = profileEmail!!
+
             val name = aiName.text.toString()
             val lastName = aiLastname.text.toString()
-            val height = aiHeight.text.toString()
-            val weight = aiWeight.text.toString()
+            val height = aiHeight.text.toString().toDouble()
+            val weight = aiWeight.text.toString().toDouble()
+            val age = aiAge.text.toString().toInt()
             Log.i(
-                "Profile info", "email - $email, name - $name, lastName - $lastName" +
+                "Profile info", "email - $aiEmail, name - $name, lastName - $lastName" +
                         ", height - $height" + "weight - $weight"
             )
 
             dbReference = FirebaseDatabase.getInstance().getReference("UserProfile")
-            val user = UserProfile(name, lastName, email, height, weight)
+            val user = UserProfile(name, lastName, aiEmail, height, weight, gender, age)
             dbReference.child("$profileUid").setValue(user).addOnSuccessListener {
                 Toast.makeText(
                     context,
