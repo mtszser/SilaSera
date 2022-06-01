@@ -24,6 +24,7 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
+
 class AppMainActivity : AppCompatActivity() {
 
     private lateinit var dbReference: DatabaseReference
@@ -36,6 +37,9 @@ class AppMainActivity : AppCompatActivity() {
     private lateinit var profileName: TextView
     private lateinit var profileLastName: TextView
     private lateinit var profileEmail: TextView
+    private lateinit var userIntention: Intent
+    private lateinit var userUid: String
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -93,6 +97,11 @@ class AppMainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
         drawerLayout.closeDrawers()
         setTitle(title)
+        val uidBundle = Bundle()
+        uidBundle.putString("userUid", userUid)
+        fragment.arguments = uidBundle
+
+
 
 
 
@@ -105,20 +114,21 @@ class AppMainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
     private fun getUserUid() {
-        val userIntent = intent
-        val userUid = userIntent.getStringExtra("uid")
-        val userEmail = userIntent.getStringExtra("profileEmail")
-        Log.i("userUid", "$userUid")
+//        val userIntent = intent
+        userIntention = intent
+        userUid = userIntention.getStringExtra("uid").toString()
+        val userEmail = userIntention.getStringExtra("profileEmail")
+        Log.i("userUid", userUid)
         Log.i("userMail", "$userEmail")
 
 
         isInFirebase(userUid, userEmail)
     }
 
-    private fun isInFirebase(userUid: String?, userEmail: String?) {
+    private fun isInFirebase(userUid: String, userEmail: String?) {
 
         dbReference = FirebaseDatabase.getInstance().getReference("UserProfile")
-        dbReference.child("$userUid").get().addOnSuccessListener {
+        dbReference.child(userUid).get().addOnSuccessListener {
             if (it.value == null) {
                 getInformation(userUid, userEmail)
             } else {
@@ -141,8 +151,8 @@ class AppMainActivity : AppCompatActivity() {
     }
 
 
-    private fun getInformation(userUid: String?, userEmail: String?) {
-        Log.i("Success Listener", "$userUid")
+    private fun getInformation(userUid: String, userEmail: String?) {
+        Log.i("Success Listener", userUid)
         Log.i("Success Listener", "$userEmail")
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
         val fragmentManager: FragmentManager = supportFragmentManager
