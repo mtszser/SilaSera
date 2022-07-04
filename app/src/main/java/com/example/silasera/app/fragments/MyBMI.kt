@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.core.view.isVisible
 import com.example.silasera.R
 import com.example.silasera.databinding.AppMyBmiBinding
@@ -17,6 +18,9 @@ class MyBMI : Fragment() {
 
     private lateinit var binding: AppMyBmiBinding
     private lateinit var dbReference: DatabaseReference
+    private lateinit var profileUid: String
+    private lateinit var myBMIResultDesc: TextView
+    private lateinit var myBMIPrevBMI: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,13 +36,41 @@ class MyBMI : Fragment() {
     private fun getPreviousBMI() {
         val getBundle = arguments
         val userUid = getBundle!!.getString("userUid").toString()
+        profileUid = userUid
         dbReference = FirebaseDatabase.getInstance().getReference("UserProfile")
-        dbReference.child(userUid)
+        dbReference.child("$userUid").get().addOnSuccessListener {
+            myBMIPrevBMI = binding.myBMIPrevBMI
+            val previousBMI = it.child("userBMI").value as Double
+            if (previousBMI > 0.1) {
+                myBMIPrevBMI.text = previousBMI.toString()
+                when {
+                    previousBMI < 18.5 -> {
+                        myBMIPrevBMI.text = previousBMI.toString()
+                    }
+                    previousBMI in 18.5..24.9 -> {
+                        myBMIPrevBMI.text = previousBMI.toString()
+                        myBMIPrevBMI.setTextColor(resources.getColor(R.color.goodBMI))
+                    }
+                    previousBMI in 25.0..30.0 -> {
+                        myBMIPrevBMI.text = previousBMI.toString()
+                        myBMIPrevBMI.setTextColor(resources.getColor(R.color.badBMI))
+                    }
+                    else -> {
+                        myBMIPrevBMI.text = previousBMI.toString()
+                    }
+                }
+            } else {
+                myBMIPrevBMI.text = "Brak danych o BMI, zapisz je by wyświetlić je później."
+                myBMIPrevBMI.setTextColor(resources.getColor(R.color.badBMI))
+            }
+
+        }
     }
 
     private fun getValues() {
 
         binding.myBMIButtonCount.setOnClickListener {
+            myBMIResultDesc = binding.myBMIResultDesc
             val heightText = binding.myBMIHeight.text.toString()
             val weightText = binding.myBmiWeight.text.toString()
             if (heightText.isNotEmpty() && weightText.isNotEmpty()) {
@@ -55,21 +87,22 @@ class MyBMI : Fragment() {
                     var bmiResult = userWeight / (userHeight * userHeight) * 10000
                     val rounded =
                         bmiResult.toBigDecimal().setScale(1, RoundingMode.HALF_EVEN).toDouble()
+                    saveBMI(rounded)
                     binding.myBMIResult.text = "Twoje BMI wynosi: $rounded"
                     when {
                         rounded < 18.5 -> {
-                            binding.myBMIResultDesc.setText(R.string.underweight)
+                            myBMIResultDesc.setText(R.string.underweight)
                         }
                         rounded in 18.5..24.9 -> {
-                            binding.myBMIResultDesc.setText(R.string.healthyweight)
-                            binding.myBMIResultDesc.setTextColor(resources.getColor(R.color.goodBMI))
+                            myBMIResultDesc.setText(R.string.healthyweight)
+                            myBMIResultDesc.setTextColor(resources.getColor(R.color.goodBMI))
                         }
                         rounded in 25.0..30.0 -> {
-                            binding.myBMIResultDesc.setText(R.string.overweight)
-                            binding.myBMIResultDesc.setTextColor(resources.getColor(R.color.badBMI))
+                            myBMIResultDesc.setText(R.string.overweight)
+                            myBMIResultDesc.setTextColor(resources.getColor(R.color.badBMI))
                         }
                         else -> {
-                            binding.myBMIResultDesc.setText(R.string.obeseweight)
+                           myBMIResultDesc.setText(R.string.obeseweight)
                         }
                     }
                 }
@@ -77,5 +110,17 @@ class MyBMI : Fragment() {
         }
     }
 
-
+    private fun saveBMI(userBMI: Double) {
+        binding.myBMIButtonSave.setOnClickListener {
+            if (userBMI == 0.0) {
+                myBMIResultDesc.setText("Żeby zapisać BMI, wpierw trzeba je policzyć.")
+                myBMIResultDesc.setTextColor(resources.getColor(R.color.badBMI))
+            } else {
+                dbReference = FirebaseDatabase.getInstance().getReference("UserProfile")
+                dbReference.child("$profileUid").child("userBMI").setValue(userBMI)
+                myBMIResultDesc.setText("BMI zostało zapisane! ")
+                myBMIResultDesc.setTextColor(resources.getColor(R.color.black))
+            }
+        }
+    }
 }
