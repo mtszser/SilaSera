@@ -124,7 +124,7 @@ class AccountInfo : Fragment() {
             )
 
             dbReference = FirebaseDatabase.getInstance().getReference("UserProfile")
-            val user = UserProfile(name, lastName, aiEmail, height, weight, gender, age, 0.1)
+            val user = UserProfile(name, lastName, aiEmail, height, weight, gender, age, 0.1, 0.0)
             dbReference.child("$profileUid").setValue(user).addOnSuccessListener {
                 Toast.makeText(
                     context,
