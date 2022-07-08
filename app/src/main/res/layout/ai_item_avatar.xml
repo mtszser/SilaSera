@@ -169,32 +169,34 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="vertical">
+
                         <com.google.android.material.checkbox.MaterialCheckBox
                             android:id="@+id/accountAI_mCheck"
                             android:layout_width="match_parent"
-                            android:text="Mężczyzna"
-                            android:textSize="20sp"
+                            android:layout_height="wrap_content"
                             android:buttonTint="@color/yellowLoginDark"
-                            android:layout_height="wrap_content"/>
+                            android:text="Mężczyzna"
+                            android:textSize="20sp" />
+
                         <com.google.android.material.checkbox.MaterialCheckBox
                             android:id="@+id/accountAI_wCheck"
-                            android:text="Kobieta"
-                            android:textSize="20sp"
                             android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:buttonTint="@color/yellowLoginDark"
-                            android:layout_height="wrap_content"/>
+                            android:text="Kobieta"
+                            android:textSize="20sp" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="center"
+                        android:orientation="vertical" />
 
 
                 </LinearLayout>
-
 
 
             </LinearLayout>
@@ -212,8 +214,7 @@
         android:focusable="true"
         android:src="@drawable/mavatar"
         app:civ_border_color="@color/yellowLoginDark"
-        tools:ignore="SpeakableTextPresentCheck">
-    </com.mikhaellopez.circularimageview.CircularImageView>
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
 
