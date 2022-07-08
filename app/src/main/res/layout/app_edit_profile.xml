@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FDFBFB"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".app.fragments.EditProfile">
 
     <LinearLayout
@@ -10,31 +12,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="EDYTUJ PROFIL"
-            android:textAlignment="center"
-            android:textSize="48sp" />
-        <TextView
-            android:id="@+id/ep_user_uid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="User uid"
-            android:textSize="25sp"
-            android:textColor="@color/black">
-        </TextView>
-        <TextView
-            android:id="@+id/ep_user_mail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="User E-mail"
-            android:textSize="25sp"
-            android:textColor="@color/black">
-        </TextView>
-
+        <include
+            layout="@layout/ep_item_avatar">
+        </include>
 
     </LinearLayout>
+
 
 </FrameLayout>
