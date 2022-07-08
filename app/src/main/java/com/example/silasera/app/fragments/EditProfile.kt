@@ -8,9 +8,23 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.silasera.R
+import com.example.silasera.databinding.AppEditProfileBinding
+import com.example.silasera.databinding.EpItemAvatarBinding
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 
 class EditProfile : Fragment() {
+
+    private lateinit var binding: EpItemAvatarBinding
+    private lateinit var dbReference: DatabaseReference
+    private lateinit var profileName: TextView
+    private lateinit var profileLastName: TextView
+    private lateinit var profileEmail: TextView
+    private lateinit var profileWeight: TextView
+    private lateinit var profileAge: TextView
+    private lateinit var profileHeight: TextView
+    private lateinit var profileCPM: TextView
 
 
     override fun onCreateView(
@@ -18,9 +32,55 @@ class EditProfile : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val appEP = inflater.inflate(R.layout.app_edit_profile, container, false)
+        binding = EpItemAvatarBinding.inflate(inflater, container, false)
 
-        return appEP
+        getTextViews()
+        getButtons()
+        getProfileInfo()
+        return binding.root
+    }
+
+    private fun getProfileInfo() {
+        val getBundle = arguments
+        val userUid = getBundle!!.getString("userUid").toString()
+        Log.i("userUidED", "$userUid")
+
+        dbReference = FirebaseDatabase.getInstance().getReference("UserProfile")
+        dbReference.child(userUid).get().addOnSuccessListener {
+            Log.i("Profile Info", "${it.value}")
+            val userName = it.child("userName").value.toString()
+            val userLastName = it.child("userLastname").value.toString()
+            val userHeight = it.child("userHeight").value.toString()
+            val userAge = it.child("userAge").value.toString()
+            val userWeight = it.child("userWeight").value.toString()
+            val userCPM = it.child("userCPM").value.toString()
+            val userEmail = it.child("userEmail").value.toString()
+            Log.i("Profile Name", userName)
+
+            profileName.text = userName
+            profileLastName.text= userLastName
+            profileEmail.text = userEmail
+            profileAge.text = "$userAge lat/a"
+            profileWeight.text = "$userWeight kg"
+            profileCPM.text = "$userCPM kcal"
+            profileHeight.text = "$userHeight cm"
+
+
+        }
+    }
+
+    private fun getButtons() {
+
+    }
+
+    private fun getTextViews() {
+        profileName = binding.appProfileName
+        profileLastName = binding.appProfileLastname
+        profileHeight = binding.appProfileHeight
+        profileWeight = binding.appProfileWeight
+        profileAge = binding.appProfileAge
+        profileEmail = binding.appProfileEmail
+        profileCPM = binding.appProfileCpm
     }
 
 
