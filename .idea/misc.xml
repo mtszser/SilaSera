@@ -10,6 +10,7 @@
         <entry key="..\:/SilaSera/app/src/main/res/drawable/bmi_man_focus.xml" value="0.294" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/bmi_woman_focus.xml" value="0.294" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/cheese_rectangle.xml" value="0.2205" />
+        <entry key="..\:/SilaSera/app/src/main/res/drawable/circularimagebutton.xml" value="0.3635" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/content_background.xml" value="0.176" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/content_container.xml" value="0.176" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/drawer_list.xml" value="0.229" />
@@ -33,6 +34,7 @@
         <entry key="..\:/SilaSera/app/src/main/res/drawable/ic_baseline_search.xml" value="0.3828125" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.3675" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/ic_icon_ball.xml" value="0.2833333333333333" />
+        <entry key="..\:/SilaSera/app/src/main/res/drawable/ic_info_layer.xml" value="0.3665" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2833333333333333" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/left_arrow_24_selector.xml" value="0.2833333333333333" />
         <entry key="..\:/SilaSera/app/src/main/res/drawable/left_arrow_24_style.xml" value="0.2833333333333333" />
@@ -69,6 +71,7 @@
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_bmi.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_body.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_cpm.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_cpm2.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_cpm_1.xml" value="0.32135416666666666" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_diet.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_profile.xml" value="0.36666666666666664" />
@@ -78,6 +81,7 @@
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_nav_header.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_send_raport.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_settings.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/ep_item_avatar.xml" value="0.365625" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/forgot_password.xml" value="0.2671875" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/fragment_bmi.xml" value="0.33" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/fragment_cpm.xml" value="0.36666666666666664" />
