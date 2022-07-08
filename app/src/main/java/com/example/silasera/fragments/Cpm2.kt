@@ -74,8 +74,6 @@ class Cpm2 : Fragment() {
                 Log.d("error", "there is no ppmData - $ppmData")
             }
 
-
-
         }
 
         return v
