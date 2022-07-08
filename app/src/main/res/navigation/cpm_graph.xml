@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cpm_graph"
+    app:startDestination="@id/myCPM2">
+
+    <fragment
+        android:id="@+id/myCPM2"
+        android:name="com.example.silasera.app.fragments.MyCPM2"
+        android:label="app_my_cpm2"
+        tools:layout="@layout/app_my_cpm2" />
+    <fragment
+        android:id="@+id/myCPM"
+        android:name="com.example.silasera.app.fragments.MyCPM"
+        android:label="app_my_cpm"
+        tools:layout="@layout/app_my_cpm" />
+</navigation>
