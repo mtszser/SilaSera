@@ -3,14 +3,194 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/app_MyCPM_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".app.fragments.MyCPM">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="CPM"
-        android:textAlignment="center"
-        android:textSize="48sp"
-        android:gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="15dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Twoje Dane:"
+                            android:textAlignment="center"
+                            android:textColor="@color/black">
+
+                        </TextView>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:hint="Waga"
+                            android:textColorHint="@color/black"
+                            android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:boxBackgroundMode="outline"
+                            app:boxStrokeColor="@color/yellowLoginDark"
+                            app:boxStrokeWidth="2dp"
+                            app:hintTextColor="@color/black"
+                            app:startIconDrawable="@drawable/ic_baseline_monitor_weight_24"
+                            app:startIconTint="@color/black">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/app_myCPM_weight"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:text="93"
+                                android:inputType="numberDecimal"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:hint="Wzrost"
+                            android:textColorHint="@color/black"
+                            android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:boxBackgroundMode="outline"
+                            app:boxStrokeColor="@color/yellowLoginDark"
+                            app:boxStrokeWidth="2dp"
+                            app:hintTextColor="@color/black"
+                            app:startIconDrawable="@drawable/ic_baseline_height_24"
+                            app:startIconTint="@color/black">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/app_myCPM_height"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:text="182"
+                                android:inputType="numberDecimal"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:hint="Wiek"
+                            android:textColorHint="@color/black"
+                            android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:boxBackgroundMode="outline"
+                            app:boxStrokeColor="@color/yellowLoginDark"
+                            app:boxStrokeWidth="2dp"
+                            app:hintTextColor="@color/black"
+                            app:startIconDrawable="@drawable/ic_baseline_child_care_24"
+                            app:startIconTint="@color/black">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/app_myCPM_age"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:text="27"
+                                android:inputType="number"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="10dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.checkbox.MaterialCheckBox
+                                    android:id="@+id/appMyCpmMan"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:buttonTint="@color/yellowLoginDark"
+                                    android:text="Mężczyzna"
+                                    android:textSize="20sp" />
+
+                                <com.google.android.material.checkbox.MaterialCheckBox
+                                    android:id="@+id/appMyCpmWoman"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:buttonTint="@color/yellowLoginDark"
+                                    android:text="Kobieta"
+                                    android:textSize="20sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="vertical" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <Button
+                    android:id="@+id/app_my_cpm_clean"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/rounded"
+                    android:text="Wyczyść"
+                    android:layout_margin="10dp">
+                </Button>
+
+                <Button
+                    android:id="@+id/app_my_cpm_next"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/rounded"
+                    android:text="Dalej"
+                    android:layout_margin="10dp">
+                </Button>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
 
 </FrameLayout>
