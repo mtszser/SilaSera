@@ -9,7 +9,7 @@
             <item
                 android:id="@+id/app_nav_edit_profile"
                 android:icon="@drawable/ic_baseline_edit_24"
-                android:title="Edytuj profil" />
+                android:title="Mój profil" />
             <item
                 android:id="@+id/app_nav_raport"
                 android:icon="@drawable/raport"
