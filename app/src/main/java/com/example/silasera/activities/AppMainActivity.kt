@@ -141,7 +141,10 @@ class AppMainActivity : AppCompatActivity() {
                 profileEmail.text = email
                 val fragmentManager: FragmentManager = supportFragmentManager
                 val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-                val myFragment = MyProfile()
+                val myFragment = EditProfile()
+                val appBundle = Bundle()
+                appBundle.putString("userUid", userUid)
+                myFragment.arguments = appBundle
                 fragmentTransaction.replace(R.id.app_frame_layout, myFragment).commit()
             }
 
