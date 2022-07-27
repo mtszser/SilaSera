@@ -28,12 +28,9 @@ class MyWorkoutAdapter(
 
         fun bindData(workout: MyWorkoutData){
             with(itemView){
-                val imageView = binding.appWorkoutImage
-                Picasso.get().load(workout.workoutImage).into(imageView)
-                val cardText = binding.appWorkoutName
+                Picasso.get().load(workout.workoutImage).into(binding.appWorkoutImage)
 
-//                binding.appWorkoutImage
-//                image.setImageResource(workout.workoutImage)
+                val cardText = binding.appWorkoutName
                 cardText.text = workout.workoutName
 
                 setOnClickListener{

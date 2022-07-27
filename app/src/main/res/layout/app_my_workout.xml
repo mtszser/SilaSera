@@ -17,6 +17,7 @@
             android:id="@+id/app_workoutRV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:scrollbars="vertical"
             tools:listitem="@layout/app_workout_cards">
 
         </androidx.recyclerview.widget.RecyclerView>
