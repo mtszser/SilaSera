@@ -27,6 +27,7 @@
                 app:cardUseCompatPadding="true">
 
                 <ImageButton
+                    android:id="@+id/app_profile_edit_button"
                     android:layout_width="26dp"
                     android:layout_height="26dp"
                     android:layout_gravity="right"
@@ -55,7 +56,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="2dp"
                             android:fontFamily="sans-serif-medium"
-                            android:text="Mateusz"
+                            android:text=""
                             android:textColor="@color/black"
                             android:textSize="22sp" />
 
@@ -65,7 +66,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="2dp"
                             android:fontFamily="sans-serif-medium"
-                            android:text="Serafin"
+                            android:text=""
                             android:textColor="@color/black"
                             android:textSize="22sp" />
                     </LinearLayout>
@@ -74,7 +75,8 @@
                         android:id="@+id/app_profile_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="mtszserafin12345@gmail.com"
+                        android:text=""
+                        android:textColor="#7E7D7D"
                         android:textAlignment="center"
                         android:textSize="17sp" />
 
@@ -126,7 +128,7 @@
                             android:textColor="@color/black"
                             android:layout_gravity="center"
                             android:textSize="20sp"
-                            android:text="92kg"/>
+                            android:text=""/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -165,7 +167,7 @@
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             android:layout_gravity="center"
-                            android:text="182cm"/>
+                            android:text=""/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -203,7 +205,7 @@
                             android:textColor="@color/black"
                             android:layout_gravity="center"
                             android:textSize="20sp"
-                            android:text="27 lat/a"/>
+                            android:text=""/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -241,7 +243,7 @@
                             android:textColor="@color/black"
                             android:layout_gravity="center"
                             android:textSize="20sp"
-                            android:text="3400kcal"/>
+                            android:text=""/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -317,7 +319,7 @@
                                 android:layout_gravity="center"
                                 android:layout_marginStart="10dp"
                                 android:fontFamily="sans-serif-medium"
-                                android:text="Upper Workout"
+                                android:text=""
                                 android:textColor="@color/black"
                                 android:textSize="17sp" />
 
@@ -357,7 +359,7 @@
                                 android:layout_gravity="center"
                                 android:layout_marginStart="10dp"
                                 android:fontFamily="sans-serif-medium"
-                                android:text="Full Body Workout"
+                                android:text=""
                                 android:textColor="@color/black"
                                 android:textSize="17sp" />
 

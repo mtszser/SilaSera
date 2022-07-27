@@ -5,14 +5,54 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.silasera.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.silasera.adapters.MyWorkoutAdapter
+import com.example.silasera.databinding.AppMyWorkoutBinding
+import com.example.silasera.dataclass.MyWorkoutData
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MyWorkout : Fragment() {
+
+    private lateinit var binding: AppMyWorkoutBinding
+    private lateinit var dbReference: DatabaseReference
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.app_my_workout, container, false)
+        binding = AppMyWorkoutBinding.inflate(inflater, container, false)
+        setDatabaseCards()
+
+
+        return binding.root
+    }
+
+    private fun setDatabaseCards() {
+        dbReference = FirebaseDatabase.getInstance().getReference("Workout").child("Man")
+        dbReference.get().addOnSuccessListener {
+            val exName = it.child("Upper").child("exName").toString()
+            val exImage = it.child("Upper").child("exImage").toString()
+            setWorkoutCards(createWorkoutCards(exName, exImage))
+        }
+
+    }
+
+    private fun setWorkoutCards(workoutCards: List<MyWorkoutData>) {
+        val recyclerView = binding.appWorkoutRV
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.adapter = MyWorkoutAdapter(workoutCards){
+
+        }
+
+    }
+
+    private fun createWorkoutCards(exName: String, exImage: String): List<MyWorkoutData> {
+        val workoutCards = ArrayList<MyWorkoutData>()
+        workoutCards.add(MyWorkoutData(exName, exImage))
+
+        return workoutCards
+
     }
 }

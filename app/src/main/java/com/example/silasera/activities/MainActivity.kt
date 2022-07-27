@@ -57,9 +57,7 @@ class MainActivity : AppCompatActivity()  {
         revokeAccess()
 
 
-
-
-    binding.loginButton.setOnClickListener {
+        binding.loginButton.setOnClickListener {
             val email = binding.loginEmail.text.toString()
             val password = binding.loginPassword.text.toString()
 

@@ -6,7 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.silasera.R
 import com.example.silasera.databinding.AppEditProfileBinding
 import com.example.silasera.databinding.EpItemAvatarBinding
@@ -25,6 +28,8 @@ class EditProfile : Fragment() {
     private lateinit var profileAge: TextView
     private lateinit var profileHeight: TextView
     private lateinit var profileCPM: TextView
+    private lateinit var userProfileUid: String
+    private lateinit var profileEditButton: ImageButton
 
 
     override fun onCreateView(
@@ -43,6 +48,7 @@ class EditProfile : Fragment() {
     private fun getProfileInfo() {
         val getBundle = arguments
         val userUid = getBundle!!.getString("userUid").toString()
+        userProfileUid = userUid
         Log.i("userUidED", "$userUid")
 
         dbReference = FirebaseDatabase.getInstance().getReference("UserProfile")
@@ -70,6 +76,18 @@ class EditProfile : Fragment() {
     }
 
     private fun getButtons() {
+        profileEditButton = binding.appProfileEditButton
+
+        profileEditButton.setOnClickListener{
+            val editProfile2 = EditProfile2()
+            val bundle = Bundle()
+            bundle.putString("userUid", userProfileUid)
+            editProfile2.arguments = bundle
+            val transaction: FragmentTransaction =  requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.app_frame_layout, editProfile2)
+            transaction.commit()
+        }
+
 
     }
 

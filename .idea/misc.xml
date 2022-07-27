@@ -67,7 +67,9 @@
         <entry key="..\:/SilaSera/app/src/main/res/layout/activity_test_card.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/ai_item_avatar.xml" value="0.35104166666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_account_info.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_edit_edit.xml" value="0.33" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_edit_profile.xml" value="0.33" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_edit_profile2.xml" value="0.33" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_bmi.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_body.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_my_cpm.xml" value="0.36666666666666664" />
@@ -81,7 +83,10 @@
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_nav_header.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_send_raport.xml" value="0.36666666666666664" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/app_settings.xml" value="0.36666666666666664" />
-        <entry key="..\:/SilaSera/app/src/main/res/layout/ep_item_avatar.xml" value="0.365625" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/app_workout_cards.xml" value="0.365625" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/ep_edit_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/ep_item_avatar.xml" value="0.25" />
+        <entry key="..\:/SilaSera/app/src/main/res/layout/ep_item_edit.xml" value="0.33" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/forgot_password.xml" value="0.2671875" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/fragment_bmi.xml" value="0.33" />
         <entry key="..\:/SilaSera/app/src/main/res/layout/fragment_cpm.xml" value="0.36666666666666664" />

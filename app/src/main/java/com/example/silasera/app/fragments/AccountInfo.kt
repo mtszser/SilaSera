@@ -69,18 +69,12 @@ class AccountInfo : Fragment() {
         }
 
 
-//        val epUserUid = appAI?.findViewById<TextView>(R.id.ep_user_uid)
-//        val epUserEmail = appAI?.findViewById<TextView>(R.id.ep_user_mail)
         val info = arguments
         val profileUid = info!!.getString("userUid")
         val profileEmail = info.getString("userEmail")
         Log.i("Success Listener1", "$profileUid")
         Log.i("Success Listener2", "$profileEmail")
         Log.i("Bundle data", "Profile uid: $profileUid, Profile Email: $profileEmail")
-//        val accountEmail = appAI.findViewById<TextView>(R.id.accountAI_email)
-//        accountEmail.text = profileEmail
-//        epUserUid?.text = profileUid.toString()
-//        epUserEmail?.text = profileEmail.toString()
         onClickListeners(appAI, profileEmail, profileUid)
 
         return appAI
@@ -104,7 +98,7 @@ class AccountInfo : Fragment() {
             }
         }
         wCheck.setOnClickListener{
-            if(mCheck.isChecked) {
+            if(wCheck.isChecked) {
                 gender = "K"
                 mCheck.isChecked = false
             }
@@ -115,16 +109,18 @@ class AccountInfo : Fragment() {
 
             val name = aiName.text.toString()
             val lastName = aiLastname.text.toString()
-            val height = aiHeight.text.toString().toDouble()
-            val weight = aiWeight.text.toString().toDouble()
-            val age = aiAge.text.toString().toInt()
+            val height = aiHeight.text.toString()
+            val weight = aiWeight.text.toString()
+            val age = aiAge.text.toString()
             Log.i(
                 "Profile info", "email - $aiEmail, name - $name, lastName - $lastName" +
                         ", height - $height" + "weight - $weight"
             )
 
+            if (name.isNotEmpty() && lastName.isNotEmpty() && height.isNotEmpty() && weight.isNotEmpty()
+                && age.isNotEmpty() && wCheck.isChecked || mCheck.isChecked){
             dbReference = FirebaseDatabase.getInstance().getReference("UserProfile")
-            val user = UserProfile(name, lastName, aiEmail, height, weight, gender, age, 0.1, 0.0)
+            val user = UserProfile(name, lastName, aiEmail, height.toDouble(), weight.toDouble(), gender, age.toInt(), 0.1, 0.0)
             dbReference.child("$profileUid").setValue(user).addOnSuccessListener {
                 Toast.makeText(
                     context,
@@ -132,6 +128,12 @@ class AccountInfo : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
                 activity?.finish()
+            }
+            } else {
+                Toast.makeText(
+                    context,
+                    "Uzupełnij wszystkie dane.",
+                    Toast.LENGTH_SHORT).show()
             }
 
 
@@ -158,15 +160,6 @@ class AccountInfo : Fragment() {
         if (requestCode == 2 && resultCode == Activity.RESULT_OK && data != null) {
             imageUri = data.data
             accountImage.setImageURI(imageUri)
-//            if(Build.VERSION.SDK_INT >= 28) {
-//                val source = ImageDecoder.createSource(this.requireActivity().contentResolver, imageUri!!)
-//                pickedBitMap = ImageDecoder.decodeBitmap(source)
-//                accountImage.setImageBitmap(pickedBitMap)
-//            } else {
-//                pickedBitMap = MediaStore.Images.Media.getBitmap(this.requireActivity().contentResolver, imageUri)
-//                accountImage.setImageBitmap(pickedBitMap)
-//            }
-//        }
             super.onActivityResult(requestCode, resultCode, data)
         }
 
