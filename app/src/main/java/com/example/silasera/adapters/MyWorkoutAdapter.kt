@@ -21,10 +21,10 @@ class MyWorkoutAdapter(
 
 
 )  : RecyclerView.Adapter<MyWorkoutAdapter.MyWorkoutViewHolder>() {
-    private lateinit var binding: AppWorkoutCardsBinding
 
 
     inner class MyWorkoutViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private val binding = AppWorkoutCardsBinding.bind(view)
 
         fun bindData(workout: MyWorkoutData){
             with(itemView){

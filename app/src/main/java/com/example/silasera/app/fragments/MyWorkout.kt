@@ -32,8 +32,8 @@ class MyWorkout : Fragment() {
     private fun setDatabaseCards() {
         dbReference = FirebaseDatabase.getInstance().getReference("Workout").child("Man")
         dbReference.get().addOnSuccessListener {
-            val exName = it.child("Upper").child("exName").toString()
-            val exImage = it.child("Upper").child("exImage").toString()
+            val exName = it.child("Upper").child("exName").value.toString()
+            val exImage = it.child("Upper").child("exImage").value.toString()
             setWorkoutCards(createWorkoutCards(exName, exImage))
         }
 
