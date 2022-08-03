@@ -1,5 +1,6 @@
 package com.example.silasera.dataclass
 
+//var workoutImage: String
 data class MyWorkoutData(var workoutName: String?, var workoutImage: String)
 
 

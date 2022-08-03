@@ -1,21 +1,38 @@
 package com.example.silasera.app.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import android.widget.Toast
+import androidx.core.view.size
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.silasera.R
 import com.example.silasera.adapters.MyWorkoutAdapter
 import com.example.silasera.databinding.AppMyWorkoutBinding
+import com.example.silasera.dataclass.MyClients
 import com.example.silasera.dataclass.MyWorkoutData
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
+import com.google.firebase.database.ktx.getValue
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
+import kotlin.math.log
 
 class MyWorkout : Fragment() {
 
     private lateinit var binding: AppMyWorkoutBinding
     private lateinit var dbReference: DatabaseReference
+    private lateinit var profileUid: String
+    private lateinit var workout2: ArrayList<MyWorkoutData>
+    private var clickedWorkout = 0
+    private lateinit var gender: String
+    private var workout = "Man"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,21 +40,79 @@ class MyWorkout : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = AppMyWorkoutBinding.inflate(inflater, container, false)
-        setDatabaseCards()
+        getUserUid()
+
 
 
         return binding.root
     }
 
-    private fun setDatabaseCards() {
-        dbReference = FirebaseDatabase.getInstance().getReference("Workout").child("Man")
-        dbReference.get().addOnSuccessListener {
-            val exName = it.child("Upper").child("exName").value.toString()
-            val exImage = it.child("Upper").child("exImage").value.toString()
-            setWorkoutCards(createWorkoutCards(exName, exImage))
-        }
+    private fun getUserUid() {
+        val getBundle = arguments
+        val userUid = getBundle!!.getString("userUid").toString()
+        profileUid = userUid
+        getGender()
 
     }
+
+    private fun getGender() {
+        dbReference = FirebaseDatabase.getInstance().getReference("UserProfile")
+        dbReference.child(profileUid).get().addOnSuccessListener {
+            gender = it.child("userGender").value.toString()
+            Log.i("gender", gender)
+            setDatabaseCards()
+        }
+
+
+    }
+
+//    .addOnFailureListener {
+//        Toast.makeText(context, "Błąd wczytywania danych." +
+//                " Być może nie masz połączenia z internetem.", Toast.LENGTH_SHORT).show()
+//    }
+
+
+    private fun setDatabaseCards() {
+        // other workouts
+        workout2 = arrayListOf()
+
+        if (gender == "M"){
+            workout = "Man"
+        } else if (gender == "K"){
+            workout = "Woman"
+        }
+
+        dbReference = FirebaseDatabase.getInstance().getReference("Workout").child("$workout")
+            .child("Workout")
+        dbReference.addValueEventListener(object: ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val names = snapshot.children.toMutableList()
+                for(el in names){
+                    workout2.add(MyWorkoutData(el.child("exName").value.toString(), el.child("exImg").value.toString()))
+                }
+
+                setWorkoutCards(createWorkoutCards(workout2))
+            }
+
+
+
+
+            override fun onCancelled(error: DatabaseError) {
+            }
+
+        })
+
+    }
+
+    private fun createWorkoutCards(workout2: ArrayList<MyWorkoutData>): List<MyWorkoutData> {
+        val workoutCards = ArrayList<MyWorkoutData>()
+        for (el in workout2){
+            workoutCards.add(el)
+        }
+        return  workoutCards
+    }
+
+
 
     private fun setWorkoutCards(workoutCards: List<MyWorkoutData>) {
         val recyclerView = binding.appWorkoutRV
@@ -48,11 +123,4 @@ class MyWorkout : Fragment() {
 
     }
 
-    private fun createWorkoutCards(exName: String, exImage: String): List<MyWorkoutData> {
-        val workoutCards = ArrayList<MyWorkoutData>()
-        workoutCards.add(MyWorkoutData(exName, exImage))
-
-        return workoutCards
-
-    }
 }

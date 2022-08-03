@@ -28,6 +28,8 @@ class MyWorkoutAdapter(
 
         fun bindData(workout: MyWorkoutData){
             with(itemView){
+
+//                 pass image url to imageView
                 Picasso.get().load(workout.workoutImage).into(binding.appWorkoutImage)
 
                 val cardText = binding.appWorkoutName
