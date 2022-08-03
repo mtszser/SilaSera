@@ -37,6 +37,7 @@ class MyWorkoutAdapter(
 
                 setOnClickListener{
                     onWorkoutClick(workout)
+
                 }
             }
         }

@@ -10,7 +10,9 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.core.view.isInvisible
 import androidx.core.view.size
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.silasera.R
 import com.example.silasera.adapters.MyWorkoutAdapter
@@ -118,9 +120,23 @@ class MyWorkout : Fragment() {
         val recyclerView = binding.appWorkoutRV
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = MyWorkoutAdapter(workoutCards){
+            showWorkout()
+            }
 
         }
 
+    private fun showWorkout() {
+
+        val workoutFragment = MyWorkout2()
+//        val bundle = Bundle()
+//        bundle.putString("workoutName", workoutName)
+//        bundle.putString("userGender", gender)
+//        workoutFragment.arguments = bundle
+        val transaction: FragmentTransaction =  requireFragmentManager().beginTransaction()
+        transaction.replace(R.id.app_frame_layout, workoutFragment)
+        transaction.commit()
+
     }
+
 
 }
