@@ -41,7 +41,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:text="'BMI Number'"
+                    android:text="ładowanie danych.."
                     android:textAlignment="center"
                     android:textSize="23sp">
 

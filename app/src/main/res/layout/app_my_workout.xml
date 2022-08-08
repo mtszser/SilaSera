@@ -26,7 +26,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="Wybierz jeden z dostępnych planów treningowych:">
+                android:text="Wybierz jeden z darmowych planów treningowych:">
 
             </TextView>
         </LinearLayout>
@@ -35,21 +35,22 @@
             android:id="@+id/app_workoutRV"
             android:layout_width="wrap_content"
             android:layout_marginTop="10dp"
+            android:visibility="gone"
             android:layout_height="wrap_content"
             android:scrollbars="vertical"
             tools:listitem="@layout/app_workout_cards">
 
         </androidx.recyclerview.widget.RecyclerView>
 
-        <Spinner
-            android:id="@+id/app_admin_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </Spinner>
-
-
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/app_myWorkout_progress"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:progressTint="#FADE22"
+        android:visibility="visible" />
 
 
 

@@ -6,25 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
 import android.widget.Toast
-import androidx.core.view.isInvisible
-import androidx.core.view.size
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.silasera.R
 import com.example.silasera.adapters.MyWorkoutAdapter
 import com.example.silasera.databinding.AppMyWorkoutBinding
-import com.example.silasera.dataclass.MyClients
 import com.example.silasera.dataclass.MyWorkoutData
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.getValue
-import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
-import kotlin.math.log
 
 class MyWorkout : Fragment() {
 
@@ -39,7 +29,7 @@ class MyWorkout : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = AppMyWorkoutBinding.inflate(inflater, container, false)
         getUserUid()
@@ -63,15 +53,13 @@ class MyWorkout : Fragment() {
             gender = it.child("userGender").value.toString()
             Log.i("gender", gender)
             setDatabaseCards()
+        }.addOnFailureListener {
+            Toast.makeText(context, "Błąd wczytywania danych." +
+                    " Być może nie masz połączenia z internetem.", Toast.LENGTH_SHORT).show()
         }
 
 
     }
-
-//    .addOnFailureListener {
-//        Toast.makeText(context, "Błąd wczytywania danych." +
-//                " Być może nie masz połączenia z internetem.", Toast.LENGTH_SHORT).show()
-//    }
 
 
     private fun setDatabaseCards() {
@@ -119,19 +107,26 @@ class MyWorkout : Fragment() {
     private fun setWorkoutCards(workoutCards: List<MyWorkoutData>) {
         val recyclerView = binding.appWorkoutRV
         recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.visibility = 0
+        binding.appMyWorkoutProgress.visibility = 8
         recyclerView.adapter = MyWorkoutAdapter(workoutCards){
-            showWorkout()
+            when (it.workoutName){
+                "Rozciąganie" -> showWorkout(it.workoutName)
+                "Trening siłowy" -> showWorkout(it.workoutName)
+                "Trening w domu" -> showWorkout(it.workoutName)
+                "Trening z gumami" -> showWorkout(it.workoutName)
             }
-
         }
+    }
 
-    private fun showWorkout() {
+    private fun showWorkout(workoutName: String?) {
 
         val workoutFragment = MyWorkout2()
-//        val bundle = Bundle()
-//        bundle.putString("workoutName", workoutName)
-//        bundle.putString("userGender", gender)
-//        workoutFragment.arguments = bundle
+        val bundle = Bundle()
+        bundle.putString("workoutName", workoutName)
+        bundle.putString("userGender", gender)
+        bundle.putString("profileUid", profileUid)
+        workoutFragment.arguments = bundle
         val transaction: FragmentTransaction =  requireFragmentManager().beginTransaction()
         transaction.replace(R.id.app_frame_layout, workoutFragment)
         transaction.commit()

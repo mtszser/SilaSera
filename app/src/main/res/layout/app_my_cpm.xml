@@ -57,7 +57,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:focusable="true"
-                                android:text="93"
+                                android:text="0"
                                 android:inputType="numberDecimal"
                                 android:textColor="@color/black"
                                 android:textSize="20sp" />
@@ -83,7 +83,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:focusable="true"
-                                android:text="182"
+                                android:text="0"
                                 android:inputType="numberDecimal"
                                 android:textColor="@color/black"
                                 android:textSize="20sp" />
@@ -109,7 +109,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:focusable="true"
-                                android:text="27"
+                                android:text="0"
                                 android:inputType="number"
                                 android:textColor="@color/black"
                                 android:textSize="20sp" />

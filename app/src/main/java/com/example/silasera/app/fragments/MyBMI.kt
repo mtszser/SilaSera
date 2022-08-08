@@ -38,30 +38,33 @@ class MyBMI : Fragment() {
         val userUid = getBundle!!.getString("userUid").toString()
         profileUid = userUid
         dbReference = FirebaseDatabase.getInstance().getReference("UserProfile")
-        dbReference.child("$userUid").get().addOnSuccessListener {
+        dbReference.child(userUid).get().addOnSuccessListener {
             myBMIPrevBMI = binding.myBMIPrevBMI
-            val previousBMI = it.child("userBMI").value as Double
-            if (previousBMI > 0.1) {
-                myBMIPrevBMI.text = previousBMI.toString()
-                when {
-                    previousBMI < 18.5 -> {
-                        myBMIPrevBMI.text = previousBMI.toString()
+            val previousBMI = it.child("userBMI").getValue(Double::class.java)
+
+            if (previousBMI != null) {
+                if (previousBMI > 0.1) {
+                    myBMIPrevBMI.text = previousBMI.toString()
+                    when {
+                        previousBMI < 18.5 -> {
+                            myBMIPrevBMI.text = previousBMI.toString()
+                        }
+                        previousBMI in 18.5..24.9 -> {
+                            myBMIPrevBMI.text = previousBMI.toString()
+                            myBMIPrevBMI.setTextColor(resources.getColor(R.color.goodBMI))
+                        }
+                        previousBMI in 25.0..30.0 -> {
+                            myBMIPrevBMI.text = previousBMI.toString()
+                            myBMIPrevBMI.setTextColor(resources.getColor(R.color.badBMI))
+                        }
+                        else -> {
+                            myBMIPrevBMI.text = previousBMI.toString()
+                        }
                     }
-                    previousBMI in 18.5..24.9 -> {
-                        myBMIPrevBMI.text = previousBMI.toString()
-                        myBMIPrevBMI.setTextColor(resources.getColor(R.color.goodBMI))
-                    }
-                    previousBMI in 25.0..30.0 -> {
-                        myBMIPrevBMI.text = previousBMI.toString()
-                        myBMIPrevBMI.setTextColor(resources.getColor(R.color.badBMI))
-                    }
-                    else -> {
-                        myBMIPrevBMI.text = previousBMI.toString()
-                    }
+                } else {
+                    myBMIPrevBMI.text = "Brak danych o BMI, zapisz je by wyświetlić je później."
+                    myBMIPrevBMI.setTextColor(resources.getColor(R.color.badBMI))
                 }
-            } else {
-                myBMIPrevBMI.text = "Brak danych o BMI, zapisz je by wyświetlić je później."
-                myBMIPrevBMI.setTextColor(resources.getColor(R.color.badBMI))
             }
 
         }

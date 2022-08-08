@@ -11,7 +11,7 @@
         android:id="@+id/app_avatar"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@drawable/profilowe"
+        android:src="@drawable/mavatar"
         app:civ_border_color="@color/cheeseYellow"
         android:layout_gravity="center"
         app:civ_border_width="4dp">
